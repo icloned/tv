@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://epg.v1.mk/fy.xml"
 
-#EXTINF:-1,group-title="央视-HEVC",凤凰
+#EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视-HEVC",凤凰
 https://stream1.freetv.fun/b93e2b0c89780113e7b968411eec5c922ab70be9dd7cfbfc3bfdea379d38509d.ctv
 
 #EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视-HEVC",CCTV-1
