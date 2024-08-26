@@ -199,24 +199,6 @@ http://192.168.3.43:35455/itv/1000000005000265031.m3u8?cdn=ystenlive
 http://192.168.3.43:35455/itv/1000000005000265017.m3u8?cdn=ystenlive
 
 
-#EXTINF:-1,tvg-id="华数4K" tvg-name="华数4K" tvg-logo="https://epg.v1.mk/logo/华数4K.png" group-title="4K频道",华数-4K
-http://192.168.3.43:35455/itv/6000000003000004748.m3u8?cdn=wasusyt
-#EXTINF:-1,tvg-id="纯享4K" tvg-name="纯享4K" tvg-logo="https://epg.v1.mk/logo/纯享4K.png" group-title="4K频道",纯享-4K
-http://192.168.3.43:35455/itv/1000000004000011651.m3u8?cdn=ystenlive
-#EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://epg.v1.mk/logo/咪咕4K.png" group-title="4K频道",咪咕4K-1
-http://192.168.3.43:35455/itv/3000000010000005180.m3u8?cdn=FifastbLive
-#EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://epg.v1.mk/logo/咪咕4K.png" group-title="4K频道",咪咕4K-2
-http://192.168.3.43:35455/itv/3000000010000015686.m3u8?cdn=FifastbLive
-#EXTINF:-1,tvg-id="LOVENATURE" tvg-name="LOVENATURE" tvg-logo="https://epg.v1.mk/logo/LOVENATURE.png" group-title="4K频道",Love Nature 4K
-https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
-#EXTINF:-1,tvg-id="LOUPE4K" tvg-name="LOUPE4K" tvg-logo="https://epg.v1.mk/logo/LOUPE4K.png" group-title="4K频道",Loupe 4K
-https://d2dw21aq0j0l5c.cloudfront.net/playlist_3840x2160.m3u8
-#EXTINF:-1,tvg-id="FASHIONONE" tvg-name="FASHIONONE" tvg-logo="https://epg.v1.mk/logo/FASHIONONE.png" group-title="4K频道",Fashion 4K
-https://fash2043.cloudycdn.services/slive/ftv_ftv_4k_hevc_73d_42080_default_466_hls.smil/playlist.m3u8
-#EXTINF:-1,tvg-id="江苏4K" tvg-name="江苏4K" tvg-logo="https://epg.v1.mk/logo/江苏4K.png" group-title="4K频道",江苏频道-UHD
-http://liveshowbak2.kan0512.com/ksz-norecord/csztv4k_4k.m3u8
-
-
 
 #EXTINF:-1,tvg-id="NewTV精品综合" tvg-name="NewTV精品综合" tvg-logo="https://epg.v1.mk/logo/NewTV精品综合.png" group-title="NewTV",NewTV-精品综合
 http://192.168.3.43:35455/itv/1000000004000019008.m3u8?cdn=ystenlive
@@ -458,3 +440,22 @@ http://192.168.3.43:35455/itv/1000000006000270004.m3u8?cdn=ystenlive
 http://192.168.3.43:35455/itv/1000000006000270005.m3u8?cdn=ystenlive
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩篮球
 http://192.168.3.43:35455/itv/1000000006000270006.m3u8?cdn=ystenlive
+
+
+#EXTINF:-1,tvg-id="华数4K" tvg-name="华数4K" tvg-logo="https://epg.v1.mk/logo/华数4K.png" group-title="4K频道",华数-4K
+http://192.168.3.43:35455/itv/6000000003000004748.m3u8?cdn=wasusyt
+#EXTINF:-1,tvg-id="纯享4K" tvg-name="纯享4K" tvg-logo="https://epg.v1.mk/logo/纯享4K.png" group-title="4K频道",纯享-4K
+http://192.168.3.43:35455/itv/1000000004000011651.m3u8?cdn=ystenlive
+#EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://epg.v1.mk/logo/咪咕4K.png" group-title="4K频道",咪咕4K-1
+http://192.168.3.43:35455/itv/3000000010000005180.m3u8?cdn=FifastbLive
+#EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://epg.v1.mk/logo/咪咕4K.png" group-title="4K频道",咪咕4K-2
+http://192.168.3.43:35455/itv/3000000010000015686.m3u8?cdn=FifastbLive
+#EXTINF:-1,tvg-id="LOVENATURE" tvg-name="LOVENATURE" tvg-logo="https://epg.v1.mk/logo/LOVENATURE.png" group-title="4K频道",Love Nature 4K
+https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
+#EXTINF:-1,tvg-id="LOUPE4K" tvg-name="LOUPE4K" tvg-logo="https://epg.v1.mk/logo/LOUPE4K.png" group-title="4K频道",Loupe 4K
+https://d2dw21aq0j0l5c.cloudfront.net/playlist_3840x2160.m3u8
+#EXTINF:-1,tvg-id="FASHIONONE" tvg-name="FASHIONONE" tvg-logo="https://epg.v1.mk/logo/FASHIONONE.png" group-title="4K频道",Fashion 4K
+https://fash2043.cloudycdn.services/slive/ftv_ftv_4k_hevc_73d_42080_default_466_hls.smil/playlist.m3u8
+#EXTINF:-1,tvg-id="江苏4K" tvg-name="江苏4K" tvg-logo="https://epg.v1.mk/logo/江苏4K.png" group-title="4K频道",江苏频道-UHD
+http://liveshowbak2.kan0512.com/ksz-norecord/csztv4k_4k.m3u8
+
