@@ -1,8 +1,8 @@
 #EXTM3U x-tvg-url="https://epg.v1.mk/fy.xml"
 
-#EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视-HEVC",CCTV-1
-http://192.168.3.43:35455/itv/1000000005000265001.m3u8?cdn=ystenlive
 
+#EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视-高码",CCTV-1
+http://192.168.3.43:35455/ysptp/cctv1.m3u8
 
 #EXTINF:-1,tvg-id="求索动物" tvg-name="求索动物" tvg-logo="https://epg.v1.mk/logo/求索动物.png" group-title="求索频道",求索动物
 http://192.168.3.43:35455/itv/6000000002000010046.m3u8?cdn=wasusyt
@@ -13,11 +13,13 @@ http://192.168.3.43:35455/itv/6000000002000032344.m3u8?cdn=wasusyt
 #EXTINF:-1,tvg-id="求索生活" tvg-name="求索生活" tvg-logo="https://epg.v1.mk/logo/求索生活.png" group-title="求索频道",求索生活
 http://192.168.3.43:35455/itv/6000000002000003382.m3u8?cdn=wasusyt
 
+
 #EXTINF:-1,tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://epg.v1.mk/logo/北京卫视.png" group-title="卫视频道",北京卫视
 http://192.168.3.43:35455/itv/1000000005000265027.m3u8?cdn=ystenlive
 
-#EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视-高码",CCTV-1
-http://192.168.3.43:35455/ysptp/cctv1.m3u8
+
+#EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视-HEVC",CCTV-1
+http://192.168.3.43:35455/itv/1000000005000265001.m3u8?cdn=ystenlive
 #EXTINF:-1,tvg-id="cctv1" tvg-name="cctv1" tvg-logo="https://epg.v1.mk/logo/cctv1.png" group-title="央视-50FPS",CCTV-1
 http://192.168.3.43:35455/itv/5000000004000002226.m3u8?cdn=bestzb
 #EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视频道",CCTV-1
