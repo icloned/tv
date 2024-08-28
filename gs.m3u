@@ -327,7 +327,12 @@ http://192.168.0.175:35455/itv/6000000006000180630.m3u8?cdn=wasusyt
 #EXTINF:-1,tvg-id="IHOT爱院线" tvg-name="IHOT爱院线" tvg-logo="https://epg.v1.mk/logo/IHOT爱院线.png" group-title="iHOT",iHOT-爱院线
 http://192.168.0.175:35455/itv/6000000006000030630.m3u8?cdn=wasusyt
 
-
+#EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩青少
+http://192.168.0.175:35455/itv/3000000020000011525.m3u8?cdn=FifastbLive
+#EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩竞技
+http://192.168.0.175:35455/itv/3000000020000011528.m3u8?cdn=FifastbLive
+#EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩篮球
+http://192.168.0.175:35455/itv/3000000020000011529.m3u8?cdn=FifastbLive
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",咪咕视频_8M1080_咪视通-1
 http://192.168.0.175:35455/itv/3000000001000005308.m3u8?cdn=FifastbLive
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",咪咕视频_8M1080_咪视通-2
@@ -364,12 +369,7 @@ http://192.168.0.175:35455/itv/3000000020000011522.m3u8?cdn=FifastbLive
 http://192.168.0.175:35455/itv/3000000020000011523.m3u8?cdn=FifastbLive
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩竞技
 http://192.168.0.175:35455/itv/3000000020000011524.m3u8?cdn=FifastbLive
-#EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩青少
-http://192.168.0.175:35455/itv/3000000020000011525.m3u8?cdn=FifastbLive
-#EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩竞技
-http://192.168.0.175:35455/itv/3000000020000011528.m3u8?cdn=FifastbLive
-#EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩篮球
-http://192.168.0.175:35455/itv/3000000020000011529.m3u8?cdn=FifastbLive
+
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩竞技
 http://192.168.0.175:35455/itv/3000000020000011530.m3u8?cdn=FifastbLive
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩篮球
