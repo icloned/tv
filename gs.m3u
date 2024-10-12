@@ -68,7 +68,7 @@ http://192.168.0.175:35455/tptv/G_CCTV-16-CQ.m3u8
 http://192.168.0.175:35455/tptv/G_CCTV-16-4K.m3u8
 #EXTINF:-1,tvg-id="cctv17" tvg-name="cctv17" tvg-logo="https://live.fanmingming.com/tv/CCTV17.png" group-title="央视频道-TPTV",cctv17
 http://192.168.0.175:35455/tptv/G_CCTV-17-CQ.m3u8
-#EXTINF:-1,tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://live.fanmingming.com/tv/CCTV4k.png" group-title="央视频道-TPTV",cctv4k
+#EXTINF:-1,tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://live.fanmingming.com/tv/CCTV4K.png" group-title="央视频道-TPTV",cctv4k
 http://192.168.0.175:35455/tptv/G_CCTV-4K-HD.m3u8
 #EXTINF:-1,tvg-id="世界地理" tvg-name="世界地理" tvg-logo="https://live.fanmingming.com/tv/世界地理.png" group-title="央视频道-TPTV",世界地理
 http://192.168.0.175:35455/tptv/G_SHIJIEDL-CQ.m3u8
