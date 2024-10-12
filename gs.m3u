@@ -92,7 +92,7 @@ http://192.168.0.175:35455/tptv/G_DIANSHIZN-CQ.m3u8
 http://192.168.0.175:35455/tptv/G_DIYIJC-CQ.m3u8
 #EXTINF:-1,tvg-id="怀旧剧场" tvg-name="怀旧剧场" tvg-logo="https://live.fanmingming.com/tv/怀旧剧场.png" group-title="央视频道-TPTV",怀旧剧场
 http://192.168.0.175:35455/tptv/G_HUAIJIUJC-CQ.m3u8
-#EXTINF:-1,tvg-id="央视文化精品" tvg-name="央视文化精品" tvg-logo="https://live.fanmingming.com/tv/央视文化精品.png" group-title="央视频道-TPTV",央视文化精品
+#EXTINF:-1,tvg-id="央视文化精品" tvg-name="央视文化精品" tvg-logo="https://epg.v1.mk/logo/央视文化精品.png" group-title="央视频道-TPTV",央视文化精品
 http://192.168.0.175:35455/tptv/G_CCTV-WENHUA-CQ.m3u8
 
 
