@@ -526,18 +526,38 @@ http://192.168.0.175:35455/itv/1000000006000270005.m3u8?cdn=ystenlive
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",精彩篮球
 http://192.168.0.175:35455/itv/1000000006000270006.m3u8?cdn=ystenlive
 
+#EXTINF:-1,tvg-id="H睛彩中原" tvg-name="H睛彩中原" tvg-logo="https://epg.v1.mk/logo/H睛彩中原.png" group-title="咪咕体育",睛彩中原
+http://192.168.0.175:35455/tptv/HD-8000k-1080P-quanminrl.m3u8
+#EXTINF:-1,tvg-id="睛彩竞技" tvg-name="睛彩竞技" tvg-logo="https://epg.v1.mk/logo/睛彩竞技.png" group-title="咪咕体育",睛彩竞技
+http://192.168.0.175:35455/tptv/HD-8000k-1080P-miguaoyun2.m3u8
+#EXTINF:-1,tvg-id="睛彩篮球" tvg-name="睛彩篮球" tvg-logo="https://epg.v1.mk/logo/睛彩篮球.png" group-title="咪咕体育",睛彩篮球
+http://192.168.0.175:35455/tptv/HD-8000k-1080P-miguaoyun1.m3u8
+
+
+
+
 #EXTINF:-1,tvg-id="华数4K" tvg-name="华数4K" tvg-logo="https://epg.v1.mk/logo/华数4K.png" group-title="4K频道",华数-4K
 http://192.168.0.175:35455/itv/6000000003000004748.m3u8?cdn=wasusyt
 #EXTINF:-1,tvg-id="纯享4K" tvg-name="纯享4K" tvg-logo="https://epg.v1.mk/logo/纯享4K.png" group-title="4K频道",纯享-4K
 http://192.168.0.175:35455/itv/1000000004000011651.m3u8?cdn=ystenlive
-
 #EXTINF:-1,tvg-id="LOVENATURE" tvg-name="LOVENATURE" tvg-logo="https://epg.v1.mk/logo/LOVENATURE.png" group-title="4K频道",Love Nature 4K
 https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
 #EXTINF:-1,tvg-id="FASHIONONE" tvg-name="FASHIONONE" tvg-logo="https://epg.v1.mk/logo/FASHIONONE.png" group-title="4K频道",Fashion 4K
 https://fash2043.cloudycdn.services/slive/ftv_ftv_4k_hevc_73d_42080_default_466_hls.smil/playlist.m3u8
-
 #EXTINF:-1,tvg-id="江苏4K" tvg-name="江苏4K" tvg-logo="https://epg.v1.mk/logo/江苏4K.png" group-title="4K频道",江苏频道-UHD
 http://liveshowbak2.kan0512.com/ksz-norecord/csztv4k_4k.m3u8
-
 #EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://epg.v1.mk/logo/咪咕4K.png" group-title="4K频道",咪咕4K-1
 http://192.168.0.175:35455/itv/3000000010000005180.m3u8?cdn=FifastbLive
+
+
+
+#EXTINF:-1,tvg-id="纯享4K" tvg-name="纯享4K" tvg-logo="https://epg.v1.mk/logo/纯享4K.png" group-title="4K频道",纯享4K
+http://192.168.0.175:35455/tptv/HD-20M-2160P-chunxiang4k.m3u8
+#EXTINF:-1,tvg-id="4k超高清" tvg-name="4k超高清" tvg-logo="https://epg.v1.mk/logo/4k超高清.png" group-title="4K频道",4K超高清
+http://192.168.0.175:35455/tptv/miguaoyun01-AVS-4K01.m3u8
+#EXTINF:-1,tvg-id="4k超高清" tvg-name="4k超高清" tvg-logo="https://epg.v1.mk/logo/4k超高清.png" group-title="4K频道",高清臻享睛彩竞技
+http://192.168.0.175:35455/tptv/miguaoyun1-AVS.m3u8
+
+
+
+
