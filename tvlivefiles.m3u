@@ -21,3 +21,15 @@ https://59ec5453559f0.streamlock.net/JennyForYou/smil:WEB3131/playlist.m3u8
 https://59ec5453559f0.streamlock.net/mexicotv/smil:miamitvmexico/playlist.m3u8
 #EXTINF:-1 group-title="PlayBoy",VISIT-X
 https://stream.visit-x.tv/vxtv/live/playlist.m3u8
+#EXTINF:-1 group-title="PlayBoy",驚艷 
+http://18.svi-studio.com:80/live/271871095922/006886711863/1.m3u8
+#EXTINF:-1 group-title="PlayBoy",潘朵拉完美 
+http://18.svi-studio.com:80/live/271871095922/006886711863/3.m3u8
+#EXTINF:-1 group-title="PlayBoy",香蕉 
+http://18.svi-studio.com:80/live/271871095922/006886711863/4.m3u8
+#EXTINF:-1 group-title="PlayBoy",松視1台 
+http://18.svi-studio.com:80/live/271871095922/006886711863/5.m3u8
+#EXTINF:-1 group-title="PlayBoy",松視2台 
+http://18.svi-studio.com:80/live/271871095922/006886711863/6.m3u8
+#EXTINF:-1 group-title="PlayBoy",松視3台 
+http://18.svi-studio.com:80/live/271871095922/006886711863/20205.m3u8
