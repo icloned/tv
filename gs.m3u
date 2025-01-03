@@ -151,7 +151,7 @@ http://192.168.0.175:35455/itv/5000000011000031109.m3u8?cdn=bestzb
 http://192.168.0.175:35455/itv/1000000005000265014.m3u8?cdn=ystenlive
 #EXTINF:-1,tvg-id="cctv16" tvg-name="cctv16" tvg-logo="https://live.fanmingming.com/tv/cctv16.png" group-title="央视频道",CCTV-16 奥林匹克
 http://192.168.0.175:35455/gaoma/cctv16.m3u8
-#EXTINF:-1,tvg-id="cctv16" tvg-name="cctv16" tvg-logo="https://live.fanmingming.com/tv/cctv16.png" group-title="央视频道",CCCTV-16 奥林匹克
+#EXTINF:-1,tvg-id="cctv16" tvg-name="cctv16" tvg-logo="https://live.fanmingming.com/tv/cctv16.png" group-title="央视频道",CCTV-16 奥林匹克
 http://192.168.0.175:35455/itv/1000000006000233002.m3u8?cdn=ystenlive
 #EXTINF:-1,tvg-id="cctv16" tvg-name="cctv16" tvg-logo="https://live.fanmingming.com/tv/cctv16.png" group-title="央视频道",CCTV-16 奥林匹克
 http://192.168.0.175:35455/itv/5000000008000023254.m3u8?cdn=bestzb
