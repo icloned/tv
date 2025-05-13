@@ -3,4 +3,4 @@
 本直播源内容均来自网络并且内部路由部署，不支持公网播放。
 内容仅自用，请勿传播。如果他人使用本仓库中的内容，后果自负。
 
-https://iclone.dpdns.org/
+https://iclone.dpdns.org/live.m3u
