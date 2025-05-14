@@ -12,14 +12,14 @@
         <p>GitHub 是一个使用 Git 进行版本控制的协作平台。GitHub 是共享和贡献开源软件的热门场所。</p>
     </section>
     <!-- 按钮 -->
-<button id="copyBtn" onclick="copyText()">点击复制 M3U 链接</button>
+<button id="copyBtn" onclick="copyText()">复制</button>
 
 <!-- JavaScript 脚本 -->
 <script>
 function copyText() {
   const text = "https://iclone.dpdns.org/live.m3u";
   navigator.clipboard.writeText(text)
-    .then(() => alert("已复制到剪贴板: " + text))
+    .then(() => alert("复制成功: " + text))
     .catch(err => alert("复制失败: " + err));
 }
 </script>
@@ -27,8 +27,8 @@ function copyText() {
         <h2>📺 视频：什么是 GitHub？</h2>
     </section>
 
-<button onclick="navigator.clipboard.writeText('https://iclone.dpdns.org/live.m3u')">
-  点击复制
+<button onclick="navigator.clipboard.writeText('https://iclone.dpdns.org/tvlives.m3u')">
+  点击
 </button>
 
     <section>
