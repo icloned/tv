@@ -4,103 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub 简介</title>
-    <style>
-        /* 设置全局样式 */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        /* 设置内容容器样式 */
-        .container {
-            max-width: 800px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* 响应式调整 */
-        @media (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>欢迎来到 “GitHub 简介”！👋</h1>
-        <section>
-            <h2>什么是 GitHub？</h2>
-            <p>GitHub 是一个使用 Git 进行版本控制的协作平台。GitHub 是共享和贡献开源软件的热门场所。</p>
-        </section>
-        
-        <section>
-            <h2>📺 视频：什么是 GitHub？</h2>
-        </section>
-        
-        <section>
-            <h2>什么是仓库？</h2>
-            <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的“ 关于仓库 ”</a>。</p>
-        </section>
+    <h1>欢迎来到 “GitHub 简介”！👋</h1>
+    <section>
+        <h2>什么是 GitHub？</h2>
+        <p>GitHub 是一个使用 Git 进行版本控制的协作平台。GitHub 是共享和贡献开源软件的热门场所。</p>
+    </section>
+    <section>
+        <h2>📺 视频：什么是 GitHub？</h2>
+    </section>
+    
+    <section>
+        <h2>什么是仓库？</h2>
+        <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的“ 关于仓库 ”</a>。</p>
+    </section>
 
-        <section>
-            <h2>什么是分支？</h2>
-            <p>分支是存储库的并行版本。默认情况下，您的仓库有一个名为 main 的分支，它被视为最终分支。</p>
-            <p>通过创建其他分支，您可以复制存储库的主分支并安全地进行任何更改，而不会中断主项目。</p>
-            <p>许多人使用分支来处理特定功能，而不会影响项目的任何其他部分。有关详细信息，请参阅 <a href="https://docs.github.com/cn/branches">“ 关于分支 ”</a>。</p>
-        </section>
+    <section>
+        <h2>什么是分支？</h2>
+        <p>分支是存储库的并行版本。默认情况下，您的仓库有一个名为 main 的分支，它被视为最终分支。</p>
+        <p>通过创建其他分支，您可以复制存储库的主分支并安全地进行任何更改，而不会中断主项目。</p>
+        <p>许多人使用分支来处理特定功能，而不会影响项目的任何其他部分。有关详细信息，请参阅 <a href="https://docs.github.com/cn/branches">“ 关于分支 ”</a>。</p>
+    </section>
 
-        <section>
-            <h2>什么是配置文件 README？</h2>
-            <p>配置文件 README 本质上是 GitHub 个人资料上的“关于我”部分，您可以在其中与 GitHub.com 上的社区分享有关您自己的信息。</p>
-            <p>GitHub 在个人资料页面顶部显示您的个人资料 README。有关详细信息，请参阅 <a href="https://docs.github.com/cn/profile-readmes">“ 管理配置文件 README”</a>。</p>
-        </section>
+    <section>
+        <h2>什么是配置文件 README？</h2>
+        <p>配置文件 README 本质上是 GitHub 个人资料上的“关于我”部分，您可以在其中与 GitHub.com 上的社区分享有关您自己的信息。</p>
+        <p>GitHub 在个人资料页面顶部显示您的个人资料 README。有关详细信息，请参阅 <a href="https://docs.github.com/cn/profile-readmes">“ 管理配置文件 README”</a>。</p>
+    </section>
 
-        <section>
-            <h2>⌨️ Activity: Your first branch</h2>
-            <p>打开一个新的浏览器选项卡，并导航到您新创建的存储库（本练习的副本）。然后，在阅读此选项卡中的说明时，执行第二个选项卡中的步骤。</p>
-            <ol>
-                <li>导航到存储库标题菜单中的 <code>&lt;&gt; 代码</code> 选项卡。</li>
-                <li>单击 main 分支下拉列表。</li>
-                <li>在文本框中输入 <code>my-first-branch</code>。</li>
-                <li>单击 <code>Create branch： my-first-branch from main</code> 以创建您的分支。</li>
-            </ol>
-            <p>现在你的分支已经被推送到 GitHub，Mona 应该已经在忙着检查你的工作了。给她一点时间，并在评论中保持关注。您将看到她回复进度信息和下一课。
-<button onclick="navigator.clipboard.writeText('https://iclone.dpdns.org/live.m3u')">
+    <section>
+        <h2>⌨️ Activity: Your first branch</h2>
+        <p>打开一个新的浏览器选项卡，并导航到您新创建的存储库（本练习的副本）。然后，在阅读此选项卡中的说明时，执行第二个选项卡中的步骤。</p>
+        <ol>
+            <li>导航到存储库标题菜单中的 <code>&lt;&gt; 代码</code> 选项卡。</li>
+            <li>单击 main 分支下拉列表。</li>
+            <li>在文本框中输入 <code>my-first-branch</code>。</li>
+            <li>单击 <code>Create branch： my-first-branch from main</code> 以创建您的分支。</li>
+        </ol>
+        <p>现在你的分支已经被推送到 GitHub，Mona 应该已经在忙着检查你的工作了。给她一点时间，并在评论中保持关注。您将看到她回复进度信息和下一课。<button onclick="navigator.clipboard.writeText('https://iclone.dpdns.org/live.m3u')">
   点击
 </button>
                 <button onclick="navigator.clipboard.writeText('https://iclone.dpdns.org/tvlives.m3u')">
   OK
-</button>
-</p>
-        </section>
-    </div>
+</button></p>
+    </section>
 </body>
 </html>
+
