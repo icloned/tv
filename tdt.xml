@@ -38,7 +38,7 @@
 <ows:Operation name="GetCapabilities">
 <ows:DCP>
 <ows:HTTP>
-<ows:Get xlink:href="http://service.sdmap.gov.cn/tileservice/dsfg_asdxb?tk=bbd924bdc04174d11383058304982cec">
+<ows:Get xlink:href="http://service.sdmap.gov.cn/tileservice/dsfg_asdxb?tk=530e526fd4b1e22a5ab4daad6cfb2a74">
 <ows:Constraint name="GetEncoding">
 <ows:AllowedValues>
 <ows:Value>KVP</ows:Value>
@@ -58,7 +58,7 @@
 <ows:Operation name="GetTile">
 <ows:DCP>
 <ows:HTTP>
-<ows:Get xlink:href="http://service.sdmap.gov.cn/tileservice/dsfg_asdxb?tk=bbd924bdc04174d11383058304982cec">
+<ows:Get xlink:href="http://service.sdmap.gov.cn/tileservice/dsfg_asdxb?tk=530e526fd4b1e22a5ab4daad6cfb2a74">
 <ows:Constraint name="GetEncoding">
 <ows:AllowedValues>
 <ows:Value>KVP</ows:Value>
