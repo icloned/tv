@@ -3,18 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub 简介</title>
+    <title>GitHub 简介与资源</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #ffffff; /* Light yellow background for readability */
+            color: #333; /* Dark gray text */
+        }
+        h1, h2 {
+            color: #00796b; /* Slightly darker blue-green for headings */
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #6eefef2b; /* Lighter blue-green background for sections */
+            border-radius: 8px;
+        }
+        button {
+            background-color: #009688; /* Teal button color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #00796b; /* Darker teal on hover */
+        }
+        .copied {
+            background-color: #4caf50; /* Green feedback color */
+        }
+    </style>
 </head>
 <body>
-    <h1>欢迎来到 “GitHub 简介”！👋</h1>
+    <h1>GitHub 简介与资源！</h1>
     <section>
         <h2>什么是 GitHub？</h2>
         <p>GitHub 是一个使用 Git 进行版本控制的协作平台。GitHub 是共享和贡献开源软件的热门场所。</p>
     </section>
-    <section>
-        <h2>📺 视频：什么是 GitHub？</h2>
-    </section>
-    
+   
     <section>
         <h2>什么是仓库？</h2>
         <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的“ 关于仓库 ”</a>。</p>
@@ -44,19 +75,33 @@
         </ol>
         <p>现在你的分支已经被推送到 GitHub，Mona 应该已经在忙着检查你的工作了。给她一点时间，并在评论中保持关注。您将看到她回复进度信息和下一课。</p>
     </br></br></br>
+        <p>订阅订阅后，在使用节点前，请使用<a href="http://www.ping0.cc" target="_blank">http://www.ping0.cc</a> 检测一下IP的风控制。</p>
           <p>
-            <button onclick="navigator.clipboard.writeText('https://' + window.location.hostname + '/live.m3u')">本地路由电视</button>
-            <button onclick="navigator.clipboard.writeText('https://git.costar.us.kg/sub/normal/30416e38-b954-4f3e-a90d-8f924b55efb3#BPB-Normal')">GitBPB节点-base64订阅配置</button>
-            <button onclick="navigator.clipboard.writeText('https://git.costar.us.kg/sub/full-normal/30416e38-b954-4f3e-a90d-8f924b55efb3?app=clash#BPB-Full-Normal')">GitBPB节点-clash订阅配置</button>
-             <button onclick="navigator.clipboard.writeText('https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">SubsCheck节点-base64订阅配置</button>
-             <button onclick="navigator.clipboard.writeText('https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')"> SubsCheck节点-clash订阅配置</button>
-              <button onclick="navigator.clipboard.writeText('https://gy.xiaozi.us.kg/sub?token=lzj666')">辣子鸡节点</button>
-               <button onclick="navigator.clipboard.writeText('https://iclone.dcostar.dpdns.org/i')">iclone节点</button>
-               <button onclick="navigator.clipboard.writeText('https://webhostmost.costar.us.kg/sub')">webhostmost订阅</button>
-              
-             
+            <button data-text="本地路由电视" onclick="copyToClipboard(this, 'https://' + window.location.hostname + '/live.m3u')">本地路由电视</button>
+            <button data-text="GitBPB节点-base64订阅配置" onclick="copyToClipboard(this, 'https://git.costar.us.kg/sub/normal/30416e38-b954-4f3e-a90d-8f924b55efb3#BPB-Normal')">GitBPB节点-base64订阅配置</button>
+            <button data-text="GitBPB节点-clash订阅配置" onclick="copyToClipboard(this, 'https://git.costar.us.kg/sub/full-normal/30416e38-b954-4f3e-a90d-8f924b55efb3?app=clash#BPB-Full-Normal')">GitBPB节点-clash订阅配置</button>
+            <button data-text="SubsCheck节点-base64订阅配置" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">SubsCheck节点-base64订阅配置</button>
+            <button data-text="SubsCheck节点-clash订阅配置" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')"> SubsCheck节点-clash订阅配置</button>
+            <button data-text="辣子鸡节点" onclick="copyToClipboard(this, 'https://gy.xiaozi.us.kg/sub?token=lzj666')">辣子鸡节点</button>
+            <button data-text="iclone节点" onclick="copyToClipboard(this, 'https://iclone.dcostar.dpdns.org/i')">iclone节点</button>
+            <button data-text="webhostmost订阅" onclick="copyToClipboard(this, 'https://webhostmost.costar.us.kg/sub')">webhostmost订阅</button>
         </p>
     </section>
+
+    <script>
+        function copyToClipboard(button, text) {
+            navigator.clipboard.writeText(text).then(function() {
+                const originalText = button.getAttribute('data-text');
+                button.textContent = '已复制!';
+                button.classList.add('copied');
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 1500); // Revert after 1.5 seconds
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
-
