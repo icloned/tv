@@ -47,7 +47,7 @@
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(81, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
         }
@@ -60,6 +60,12 @@
             color: white;
             margin: 10px 0;
             width: 200px;
+            outline: none;
+        }
+
+        #passwordInput:focus {
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
         }
 
         #passwordInput::placeholder {
@@ -282,11 +288,15 @@
 
             document.addEventListener('DOMContentLoaded', function() {
                 const passwordOverlay = document.getElementById('passwordOverlay');
+                const passwordInput = document.getElementById('passwordInput');
                 passwordOverlay.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
 
+                // 自动聚焦到密码输入框
+                passwordInput.focus();
+
                 document.getElementById('submitPassword').addEventListener('click', checkPassword);
-                document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+                passwordInput.addEventListener('keypress', function(e) {
                     if (e.key === 'Enter') {
                         checkPassword();
                     }
