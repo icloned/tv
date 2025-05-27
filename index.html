@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub 简介</title>
+    <script>
+        // 防止保存页面
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                alert('禁止保存页面！');
+                return false;
+            }
+        });
+
+        // 禁用右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // 禁用选择文本
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    </script>
     <style>
         #passwordOverlay {
             position: fixed;
@@ -220,31 +242,29 @@
                 const heightThreshold = window.outerHeight - window.innerHeight > threshold;
                 
                 if (widthThreshold || heightThreshold) {
-                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">小样！还想查密码！请关闭开发者工具后输入密码</h1>';
+                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">请关闭开发者工具后输入</h1>';
                 }
             }
 
-            // 定期检查开发者工具
             setInterval(checkDevTools, 1000);
 
-            // 监听开发者工具快捷键
             document.addEventListener('keydown', function(e) {
                 if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
                     e.preventDefault();
-                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">小样！还想查密码！请关闭开发者工具后重试</h1>';
+                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">请关闭开发者工具后重试</h1>';
                 }
             });
         })();
 
-        // 密码加密和验证
+        
         (function() {
-            // 使用简单的加密方法混淆密码
+            
             function encrypt(str) {
                 return btoa(str.split('').reverse().join(''));
             }
 
-            // 加密后的密码
-            const encryptedPassword = 'MjI4NQ=='; // 加密后的 "5****2"
+            
+            const encryptedPassword = 'MjI4NQ=='; 
 
             function checkPassword() {
                 const inputPassword = document.getElementById('passwordInput').value;
@@ -260,7 +280,6 @@
                 }
             }
 
-            // 等待DOM加载完成
             document.addEventListener('DOMContentLoaded', function() {
                 const passwordOverlay = document.getElementById('passwordOverlay');
                 passwordOverlay.style.display = 'flex';
