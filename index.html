@@ -8,34 +8,85 @@
         body {
             font-family: sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            background-color: #ffffff; /* Light yellow background for readability */
-            color: #333; /* Dark gray text */
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #fff;
         }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         h1, h2 {
-            color: #00796b; /* Slightly darker blue-green for headings */
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
+
         section {
             margin-bottom: 20px;
-            padding: 15px;
-            background-color: #6eefef2b; /* Lighter blue-green background for sections */
-            border-radius: 8px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
         }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
         button {
-            background-color: #009688; /* Teal button color */
+            background-color: rgba(255, 255, 255, 0.2);
             color: white;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 10px 15px;
             margin: 5px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
+
         button:hover {
-            background-color: #00796b; /* Darker teal on hover */
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .copied {
-            background-color: #4caf50; /* Green feedback color */
+            background-color: rgba(76, 175, 80, 0.3);
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #fff;
+        }
+
+        code {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
         }
     </style>
 </head>
@@ -48,24 +99,24 @@
    
     <section>
         <h2>什么是仓库？</h2>
-        <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的“ 关于仓库 ”</a>。</p>
+        <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的" 关于仓库 "</a>。</p>
     </section>
 
     <section>
         <h2>什么是分支？</h2>
         <p>分支是存储库的并行版本。默认情况下，您的仓库有一个名为 main 的分支，它被视为最终分支。</p>
         <p>通过创建其他分支，您可以复制存储库的主分支并安全地进行任何更改，而不会中断主项目。</p>
-        <p>许多人使用分支来处理特定功能，而不会影响项目的任何其他部分。有关详细信息，请参阅 <a href="https://docs.github.com/cn/branches">“ 关于分支 ”</a>。</p>
+        <p>许多人使用分支来处理特定功能，而不会影响项目的任何其他部分。有关详细信息，请参阅 <a href="https://docs.github.com/cn/branches">" 关于分支 "</a>。</p>
     </section>
 
     <section>
         <h2>什么是配置文件 README？</h2>
-        <p>配置文件 README 本质上是 GitHub 个人资料上的“关于我”部分，您可以在其中与 GitHub.com 上的社区分享有关您自己的信息。</p>
-        <p>GitHub 在个人资料页面顶部显示您的个人资料 README。有关详细信息，请参阅 <a href="https://docs.github.com/cn/profile-readmes">“ 管理配置文件 README”</a>。</p>
+        <p>配置文件 README 本质上是 GitHub 个人资料上的"关于我"部分，您可以在其中与 GitHub.com 上的社区分享有关您自己的信息。</p>
+        <p>GitHub 在个人资料页面顶部显示您的个人资料 README。有关详细信息，请参阅 <a href="https://docs.github.com/cn/profile-readmes">" 管理配置文件 README"</a>。</p>
     </section>
 
     <section>
-        <h2>⌨️ Activity: Your first branch</h2>
+        <h2>Activity: Your first branch</h2>
         <p>打开一个新的浏览器选项卡，并导航到您新创建的存储库（本练习的副本）。然后，在阅读此选项卡中的说明时，执行第二个选项卡中的步骤。</p>
         <ol>
             <li>导航到存储库标题菜单中的 <code>&lt;&gt; 代码</code> 选项卡。</li>
