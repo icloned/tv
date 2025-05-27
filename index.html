@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub 简介</title>
     <style>
+        #passwordOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #passwordForm {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        #passwordInput {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: white;
+            margin: 10px 0;
+            width: 200px;
+        }
+
+        #passwordInput::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        #submitPassword {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #submitPassword:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        #errorMessage {
+            color: #ff6b6b;
+            margin-top: 10px;
+            display: none;
+        }
+
         body {
             font-family: sans-serif;
             line-height: 1.6;
@@ -91,55 +151,130 @@
     </style>
 </head>
 <body>
-    <h1>GitHub 简介与资源！</h1>
-    <section>
-        <h2>什么是 GitHub？</h2>
-        <p>GitHub 是一个使用 Git 进行版本控制的协作平台。GitHub 是共享和贡献开源软件的热门场所。</p>
-    </section>
-   
-    <section>
-        <h2>什么是仓库？</h2>
-        <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的" 关于仓库 "</a>。</p>
-    </section>
+    <div id="passwordOverlay" style="display: none;">
+        <div id="passwordForm">
+            <h2 style="color: white; margin-bottom: 20px;">请输入访问密码</h2>
+            <input type="password" id="passwordInput" placeholder="请输入密码">
+            <br>
+            <button id="submitPassword">确认</button>
+            <div id="errorMessage">密码错误，请重试</div>
+        </div>
+    </div>
 
-    <section>
-        <h2>什么是分支？</h2>
-        <p>分支是存储库的并行版本。默认情况下，您的仓库有一个名为 main 的分支，它被视为最终分支。</p>
-        <p>通过创建其他分支，您可以复制存储库的主分支并安全地进行任何更改，而不会中断主项目。</p>
-        <p>许多人使用分支来处理特定功能，而不会影响项目的任何其他部分。有关详细信息，请参阅 <a href="https://docs.github.com/cn/branches">" 关于分支 "</a>。</p>
-    </section>
+    <div id="mainContent" style="display: none;">
+        <h1>GitHub 简介与资源！</h1>
+        <section>
+            <h2>什么是 GitHub？</h2>
+            <p>GitHub 是一个使用 Git 进行版本控制的协作平台。GitHub 是共享和贡献开源软件的热门场所。</p>
+        </section>
+       
+        <section>
+            <h2>什么是仓库？</h2>
+            <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的" 关于仓库 "</a>。</p>
+        </section>
 
-    <section>
-        <h2>什么是配置文件 README？</h2>
-        <p>配置文件 README 本质上是 GitHub 个人资料上的"关于我"部分，您可以在其中与 GitHub.com 上的社区分享有关您自己的信息。</p>
-        <p>GitHub 在个人资料页面顶部显示您的个人资料 README。有关详细信息，请参阅 <a href="https://docs.github.com/cn/profile-readmes">" 管理配置文件 README"</a>。</p>
-    </section>
+        <section>
+            <h2>什么是分支？</h2>
+            <p>分支是存储库的并行版本。默认情况下，您的仓库有一个名为 main 的分支，它被视为最终分支。</p>
+            <p>通过创建其他分支，您可以复制存储库的主分支并安全地进行任何更改，而不会中断主项目。</p>
+            <p>许多人使用分支来处理特定功能，而不会影响项目的任何其他部分。有关详细信息，请参阅 <a href="https://docs.github.com/cn/branches">" 关于分支 "</a>。</p>
+        </section>
 
-    <section>
-        <h2>Activity: Your first branch</h2>
-        <p>打开一个新的浏览器选项卡，并导航到您新创建的存储库（本练习的副本）。然后，在阅读此选项卡中的说明时，执行第二个选项卡中的步骤。</p>
-        <ol>
-            <li>导航到存储库标题菜单中的 <code>&lt;&gt; 代码</code> 选项卡。</li>
-            <li>单击 main 分支下拉列表。</li>
-            <li>在文本框中输入 <code>my-first-branch</code>。</li>
-            <li>单击 <code>Create branch： my-first-branch from main</code> 以创建您的分支。</li>
-        </ol>
-        <p>现在你的分支已经被推送到 GitHub，Mona 应该已经在忙着检查你的工作了。给她一点时间，并在评论中保持关注。您将看到她回复进度信息和下一课。</p>
-    </br></br></br>
-        <p>订阅节点后，在使用每一个节点前，请使用<a href="http://www.ping0.cc" target="_blank">http://www.ping0.cc</a> 检测一下IP的风控值。</p>
-          <p>
-            <button data-text="本地路由电视" onclick="copyToClipboard(this, 'https://' + window.location.hostname + '/live.m3u')">本地路由电视</button>
-            <button data-text="GitBPB节点-base64订阅配置" onclick="copyToClipboard(this, 'https://git.costar.us.kg/sub/normal/30416e38-b954-4f3e-a90d-8f924b55efb3#BPB-Normal')">GitBPB节点-base64订阅配置</button>
-            <button data-text="GitBPB节点-clash订阅配置" onclick="copyToClipboard(this, 'https://git.costar.us.kg/sub/full-normal/30416e38-b954-4f3e-a90d-8f924b55efb3?app=clash#BPB-Full-Normal')">GitBPB节点-clash订阅配置</button>
-            <button data-text="SubsCheck节点-base64订阅配置" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">SubsCheck节点-base64订阅配置</button>
-            <button data-text="SubsCheck节点-clash订阅配置" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')"> SubsCheck节点-clash订阅配置</button>
-            <button data-text="辣子鸡节点" onclick="copyToClipboard(this, 'https://gy.xiaozi.us.kg/sub?token=lzj')">辣子鸡节点</button>
-            <button data-text="iclone节点" onclick="copyToClipboard(this, 'https://iclone.dcostar.dpdns.org/i')">iclone节点</button>
-            <button data-text="webhostmost订阅" onclick="copyToClipboard(this, 'https://webhostmost.costar.us.kg/sub')">webhostmost订阅</button>
-        </p>
-    </section>
+        <section>
+            <h2>什么是配置文件 README？</h2>
+            <p>配置文件 README 本质上是 GitHub 个人资料上的"关于我"部分，您可以在其中与 GitHub.com 上的社区分享有关您自己的信息。</p>
+            <p>GitHub 在个人资料页面顶部显示您的个人资料 README。有关详细信息，请参阅 <a href="https://docs.github.com/cn/profile-readmes">" 管理配置文件 README"</a>。</p>
+        </section>
+
+        <section>
+            <h2>Activity: Your first branch</h2>
+            <p>打开一个新的浏览器选项卡，并导航到您新创建的存储库（本练习的副本）。然后，在阅读此选项卡中的说明时，执行第二个选项卡中的步骤。</p>
+            <ol>
+                <li>导航到存储库标题菜单中的 <code>&lt;&gt; 代码</code> 选项卡。</li>
+                <li>单击 main 分支下拉列表。</li>
+                <li>在文本框中输入 <code>my-first-branch</code>。</li>
+                <li>单击 <code>Create branch： my-first-branch from main</code> 以创建您的分支。</li>
+            </ol>
+            <p>现在你的分支已经被推送到 GitHub，Mona 应该已经在忙着检查你的工作了。给她一点时间，并在评论中保持关注。您将看到她回复进度信息和下一课。</p>
+        </br></br></br>
+            <p>订阅后，在使用订阅前，请使用<a href="http://www.ping0.cc" target="_blank">http://www.ping0.cc</a> 检测一下IP的风控值。</p>
+              <p>
+                <button data-text="本地路由电视" onclick="copyToClipboard(this, 'https://' + window.location.hostname + '/live.m3u')">本地路由电视</button>
+                <button data-text="GitBPB-base64订阅" onclick="copyToClipboard(this, 'https://git.costar.us.kg/sub/normal/30416e38-b954-4f3e-a90d-8f924b55efb3#BPB-Normal')">GitBPB节点-base64订阅</button>
+                <button data-text="GitBPB-clash订阅" onclick="copyToClipboard(this, 'https://git.costar.us.kg/sub/full-normal/30416e38-b954-4f3e-a90d-8f924b55efb3?app=clash#BPB-Full-Normal')">GitBPB节点-clash订阅</button>
+                <button data-text="SubsCheck-base64订阅" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">SubsCheck节点-base64订阅</button>
+                <button data-text="SubsCheck-clash订阅" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')"> SubsCheck节点-clash订阅</button>
+                <button data-text="辣子鸡订阅" onclick="copyToClipboard(this, 'https://gy.xiaozi.us.kg/sub?token=lzj')">辣子鸡订阅</button>
+                <button data-text="iclone订阅" onclick="copyToClipboard(this, 'https://iclone.dcostar.dpdns.org/i')">iclone订阅</button>
+                <button data-text="webhostmost订阅" onclick="copyToClipboard(this, 'https://webhostmost.costar.us.kg/sub')">webhostmost订阅</button>
+            </p>
+        </section>
+    </div>
 
     <script>
+        // 反调试保护
+        (function() {
+            function checkDevTools() {
+                const threshold = 160;
+                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                
+                if (widthThreshold || heightThreshold) {
+                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">请关闭开发者工具后重试</h1>';
+                }
+            }
+
+            // 定期检查开发者工具
+            setInterval(checkDevTools, 1000);
+
+            // 监听开发者工具快捷键
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+                    e.preventDefault();
+                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">请关闭开发者工具后重试</h1>';
+                }
+            });
+        })();
+
+        // 密码加密和验证
+        (function() {
+            // 使用简单的加密方法混淆密码
+            function encrypt(str) {
+                return btoa(str.split('').reverse().join(''));
+            }
+
+            // 加密后的密码
+            const encryptedPassword = 'MjI4NQ=='; // 加密后的 "5**2"
+
+            function checkPassword() {
+                const inputPassword = document.getElementById('passwordInput').value;
+                const encryptedInput = encrypt(inputPassword);
+                
+                if (encryptedInput === encryptedPassword) {
+                    document.getElementById('passwordOverlay').style.display = 'none';
+                    document.getElementById('mainContent').style.display = 'block';
+                    document.body.style.overflow = 'auto';
+                } else {
+                    document.getElementById('errorMessage').style.display = 'block';
+                    document.getElementById('passwordInput').value = '';
+                }
+            }
+
+            // 等待DOM加载完成
+            document.addEventListener('DOMContentLoaded', function() {
+                const passwordOverlay = document.getElementById('passwordOverlay');
+                passwordOverlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+
+                document.getElementById('submitPassword').addEventListener('click', checkPassword);
+                document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        checkPassword();
+                    }
+                });
+            });
+        })();
+
         function copyToClipboard(button, text) {
             navigator.clipboard.writeText(text).then(function() {
                 const originalText = button.getAttribute('data-text');
