@@ -1,0 +1,345 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<Meta name="robots" content="noindex,nofollow">
+		<meta name="keywords" content="等高线，高程数据" />
+		<title>获取绘制等高线-谷歌地图</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="conrec.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initialize" async defer></script>
+		<script src="load.js"></script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					'gtm.start': new Date().getTime(),
+					event: 'gtm.js'
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-T8C672HH');
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+
+
+
+
+	<body onload="updateSavedNameList();addFullScreenOption();" ;>
+
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8C672HH" height="0" width="0"
+				style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<div style="margin:0px 0px 5px 0px;">
+			<span style="font-size:30px;"><img src="icon.png" height="26" style="margin-right:5px">绘制等高线</span>
+			<span style="margin-left:50px;">
+				<input type="text" style="width:200px;height:30px" id="searchterm" name="searchterm" value="" onkeydown="searchIfEnter(event);">
+				<input type="button" style="height:30px" id="searchbutton" name="searchbutton" value="谷歌地图搜索" onclick="searchMap();">
+			</span>
+		</div>
+
+		<div>
+			<div style="display:none;">
+				<label>Plot elevation: <input type="checkbox" name="plotElevation" id="plotElevation"></label>
+				<label>Plot lines: <input type="checkbox" name="plotLines" id="plotLines" checked></label>
+				<label>Plot circles: <input type="checkbox" name="plotCircles" id="plotCircles"></label>
+			</div>
+			<div style="width:800px;">
+				<div style="float:left"></div>
+				<div style="float:right;display:none;" id="clearMarkerButton">
+					<input type="button" onclick="clearMap('marker')" value="clear marker" title="clear marker">
+				</div>
+				<div style="float:right;display:none;" id="clearRectangleButton">
+					<input type="button" onclick="clearMap('rectangle')" value="clear rectangle" title="clear rectangle">
+				</div>
+				<div style="float:right;display:none;" id="clearContourButton">
+					<input type="button" onclick="clearMap('contour')" value="clear contour" title="clear contour">
+				</div>
+			</div>
+
+			<div style="clear: both;"> </div>
+		
+				<div id="map-canvas" style="float:left; width: 1200px; height:600px;margin-bottom: 20px;"></div>
+				<div id="legend"></div>
+				<div style="clear: both;"> </div>
+
+			<div style="float:left; margin-right: 20px;">
+			
+				<table style="border:#E7E7E7 1px solid;border-collapse:collapse; width:380px">
+					<tr style="height:40px">
+						<td><span  style="margin-left:10px"><b>采样</b></span>
+							<div style="float:right;margin-right:10px"><input type="button" onclick="setCoords()" value="获取数据并绘制等高线"
+									title="获取数据并绘制等高线"></div>
+						</td>
+					</tr>
+					<tr>
+						<td><b style="margin-left:10px">西北角</b><br>
+							<span style="margin-left:10px">维度: <input disabled type="text" name="minLatitude" id="minLatitude" value=''
+								style="width:130px;margin-left:10px"> 经度: <input disabled type="text" name="minLongitude" id="minLongitude"
+								value='' style="width:130px;"> </span>
+								</td>
+					</tr>
+					<tr>
+						<td><b style="margin-left:10px">东南角</b><br>
+							<span style="margin-left:10px">维度: <input disabled type="text" name="maxLatitude" id="maxLatitude" value=''
+								style="width:130px;margin-left:10px"> 经度: <input disabled type="text" name="maxLongitude" id="maxLongitude"
+								value='' style="width:130px;"></span></td>
+					</tr>
+					<tr>
+						<td><b style="margin-left:10px">采样点:</b><br><span style="margin-left:10px">N-S 轴: <input disabled type="text" name="pointsNS" id="pointsNS"
+								value='20' style="width:30px;"><span style="display:none" ;><span> 步长:
+								</span><span id="NSstep"></span></span>
+							W-E 轴: <input disabled type="text" name="pointsNS" id="pointsWE" value='20'
+								style="width:30px;"><span style="display:none" ;><span> 步长: </span><span
+									id="WEstep"></span></span></span></td>
+					</tr>
+				</table>
+			</div>
+
+
+
+
+
+
+
+
+			<div style="float:left;margin-right: 20px;">
+				<table style="border:#E7E7E7 1px solid;border-collapse:collapse; width:300px">
+					<tr style="height:40px">
+						<td ><span  style="margin-left:10px"><b>绘图选项</b></span>
+							<div style="float:right; margin-right:10px"><input type="button" onclick="calculateContour()"
+									value="重新绘制" title="重新绘制"></div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td><label><input type="radio" name="levelMode" id="levelInterval"
+									value="custom" checked>层级间隔 [<span id="unitIntervalLevels">米</span>]:
+							</label><input type="text" name="intervalContour" id="intervalContour" value='2'
+								style="width:30px;"></td>
+					</tr>
+					
+					<tr>
+						<td><label><input disabled type="radio" name="levelMode" id="levelModeAuto" value="auto"
+									>层级数: </label><input disabled  type="text" name="nContour" id="nContour"
+								value='7' style="width:30px;"></td>
+					</tr>
+
+					
+					<tr>
+						<td><label><input disabled type="radio" name="levelMode" id="levelModeCustom"
+									value="custom">自定义层级 [<span id="unitCustomLevels">米</span>]: </label><input disabled 
+								type="text" name="customContour" id="customContour" value='305,319,400'
+								style="width:100px;"></td>
+					</tr>
+
+					<tr>
+						<td><label style="margin-left:1px"><input disabled type="checkbox" name="plotSamplingPoints" id="plotSamplingPoints"
+									onclick="plotSamplePoints()">绘制采样点</label></td>
+					</tr>
+					<tr>
+						<td><span style="margin-left:20px;padding-top:20px">单位: <label><input disabled type="radio" name="units" id="unitMeter" checked
+									onclick="changeUnitLabels()">米</label><label><input disabled type="radio" name="units"
+									id="unitFeet" onclick="changeUnitLabels()">英尺</label></span></td>
+					</tr>
+					<tr>
+						<td><span style="font-size:10px;margin-left:20px">图例四舍五入（小数位数）:
+								&nbsp;</span><label><input disabled type="text" name="roundingOption" id="roundingOption"
+									value="0" style="width:20px;"></label></td>
+					</tr>
+				</table>
+			</div>
+
+			<div  style="float:left;margin-right: 20px;">
+				<table style="border:#E7E7E7 1px solid;border-collapse:collapse;">
+					<tr style="height:40px ; margin-left:10px">
+						<td><span style=" margin-left:10px"><b>保存/加载Cookie</b></span></td>
+					</tr>
+					<tr >
+						<td ><input type="button" onclick="saveCurrentData()" value="将数据保存在cookie中"
+								title="将数据保存在cookie中" style=" margin-left:10px"></td>
+					</tr>
+					<tr style="height:40px">
+						<td><select name="savedData" id="savedData"
+								onchange="loadFromCookie(this.value)"  style="height:30px; margin-left:10px; margin-right:10px"></select></td>
+					</tr>
+					<tr style="height:40px">
+						<td><select name="deleteCookieList" id="deleteCookieList"
+								onchange="removeCookie(this.value)"  style="height:30px; margin-left:10px"></select></td>
+					</tr>
+				</table>
+			</div>
+
+			<div style="float:left;">
+				<table style="border:#E7E7E7 1px solid;border-collapse:collapse; width:100px">
+<!-- 					<tr style="height:40px">
+						<td><span style="margin-left:10px"><b> 其他选项</b></span></td>
+					</tr> -->
+
+					<tr style="height:40px">
+						<td>
+							<div style="float:left;">
+								<select name="clearMap" id="clearMapMenu" onchange="clearMap(this.value)" style="height:30px; margin-left:10px">
+									<option value=""><span >清除地图</span></option>
+									<option value="all">全部</option>
+									<option value="rectangle">矩形</option>
+									<option value="marker">标记</option>
+									<option value="contour">等高线</option>
+									<option value="samplepoints">采样点</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+<!-- 
+					<tr style="height:40px">
+						<td>
+							<div style="float:left;">
+								<select name="resolution" id="resolution" onselect="setResolution();"
+									onchange="setResolution();"  style="height:30px; margin-left:10px;margin-right:10px">
+									<option value="">更改分辨率</option>
+									<option value="800x600">800x600</option>
+									<option value="1024x768">1024x768</option>
+									<option value="1280x960">1280x960</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+ -->
+
+				</table>
+			</div>
+
+		</div>
+		</div>
+
+		<div style="clear: both;"> </div>
+		<div style="float:left; width:1000px;">
+
+
+		
+
+		<h3 id="VHT">保存KML格式</h3>
+		
+		<table>
+				<tr>
+				<td>
+					<div><textarea id="copyKML" style="width:560px;height:60px;"></textarea></div>
+					<a id="executedownloadKML" href="https://www.colormap.run/contour/index.html#">下载 KML文件</a>
+				</td>
+			</tr>
+	
+		</table>
+		<br><br>
+		
+		<h3 id="VHT">保存SVG格式</h3>
+		<table>
+					
+			<tr>
+				<td>
+					<div><textarea id="copySVG" style="width:560px;height:60px;"></textarea></div>
+					<a id="executedownload" href="https://www.colormap.run/contour/index.html#">下载 SVG文件</a>
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td>
+					<div id="contour" style="float: left;"></div>
+				</td>
+			</tr>
+		</table>
+		
+		
+
+		<br><br>
+
+
+		<div style="margin-top:0px;">
+			<h3>海拔数据<br></h3>
+			<div id="plottingArea" style="float:left;">
+				<textarea id='output' style="width:560px;height:100px;"></textarea>
+			</div>
+			<div>
+				<span style="margin-left:3px"> 最小值: </span><span id="min"></span><br>
+				<span style="margin-left:3px"> 最大值: </span><span id="max"></span>
+			</div>
+		</div>
+
+		<div style="clear: both;"> </div>
+
+
+		<div style="float:left;width:150px; display:none">
+			<h3>保存数据</h3>
+			<textarea id="SaveDataOutput" style="width:100px"></textarea><br>
+			<div style="font-size:12px;width:100px;">复制数据并保存到某个位置</div>
+		</div>
+		<div style="float:left;width:150px; display:none">
+			<h3>加载数据</h3>
+			<textarea id="ImportDataTextArea" style="width:100px"></textarea><br>
+			<div style="vertical-align:top;">
+				<div style="font-size:12px;width:110px;">将数据粘贴回此处，然后单击下面的按钮</div>
+				<input type="button" onclick="importDataTextArea()" value="加载数据">
+			</div>
+		</div>
+
+
+
+		<div style="clear: both;"> </div>
+		
+
+
+
+		<br><br>
+
+		<div style="display:none;">
+			<textarea id="example"></textarea>
+			<div>
+				<textarea id="requestHistory" style="width:400px;height:200px;"></textarea>
+				<textarea id="debug" style="width:400px;height:200px;"></textarea>
+			</div>
+		</div>
+
+		<script>
+			function download(filename, text) {
+				var element = document.createElement('a');
+				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+				element.setAttribute('download', filename);
+
+				element.style.display = 'none';
+				document.body.appendChild(element);
+
+				element.click();
+
+				document.body.removeChild(element);
+			}
+
+
+
+			//execute download
+			$(document).ready(function() {
+				$("#executedownload").click(function(event) {
+					event.preventDefault();
+					//console.log($("#copySVG").val());
+					download("contours.svg", $("#copySVG").val())
+				});
+				$("#executedownloadKML").click(function(event) {
+					event.preventDefault();
+					download("contours.kml", $("#copyKML").val())
+				});
+			});
+		</script>
+
+	</body>
+
+
+
+</html>
