@@ -1,5 +1,4 @@
 #EXTM3U x-tvg-url="https://epg.v1.mk/fy.xml"
-
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/2201/057/821/202204010054_1626677502161_H169_1080.jpg" group-title="央视频道", CCTV1综合
 http://192.168.3.3:35455/mgtv/608807420.m3u8
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/346/945/202205311432_1653977575541_H169_1080.jpg" group-title="央视频道", CCTV2财经
@@ -34,13 +33,19 @@ http://192.168.3.3:35455/mgtv/624878440.m3u8
 http://192.168.3.3:35455/mgtv/673168223.m3u8
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5501/083/631/202204010052_1626678423944_H169_1080.jpg" group-title="央视频道", CCTV17农业农村
 http://192.168.3.3:35455/mgtv/673168256.m3u8
-
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/002/202405081702_1715158642984_H169_1080.jpg" group-title="央视频道", 老故事
 http://192.168.3.3:35455/mgtv/884121956.m3u8
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/212/893/202405081702_1715158824845_H169_1080.jpg" group-title="央视频道", 发现之旅
 http://192.168.3.3:35455/mgtv/624878970.m3u8
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/019/355/202405081702_1715158104256_H169_1080.jpg" group-title="央视频道", 中学生
 http://192.168.3.3:35455/mgtv/708869532.m3u8
+#EXTINF:-1,tvg-id="cctv16" tvg-name="cctv16" tvg-logo="https://epg.v1.mk/logo/cctv16.png" group-title="央视频道",cctv16-NPTV
+http://192.168.3.3:35455/nptv/cctv16.m3u8
+#EXTINF:-1,tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://epg.v1.mk/logo/cctv4k.png" group-title="央视频道",cctv4k-NPTV
+http://192.168.3.3:35455/nptv/cctv4k.m3u8
+#EXTINF:-1,tvg-id="cctv8k" tvg-name="cctv8k" tvg-logo="https://epg.v1.mk/logo/cctv8k.png" group-title="央视频道",cctv8k-NPTV
+http://192.168.3.3:35455/nptv/cctv8k.m3u8
+
 
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/058/351/202106171938_5100043384_H169_1080.jpg" group-title="卫视频道", 东方卫视
 http://192.168.3.3:35455/mgtv/651632648.m3u8
@@ -68,93 +73,6 @@ http://192.168.3.3:35455/mgtv/849116810.m3u8
 http://192.168.3.3:35455/mgtv/947472502.m3u8
 #EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/021/897/202308111126_1690875414853_H169_1080.jpg" group-title="卫视频道", 海峡卫视
 http://192.168.3.3:35455/mgtv/849119120.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/002/275/202107191641_5100001716_H169_1080.jpg" group-title="地方频道", 上海新闻综合
-http://192.168.3.3:35455/mgtv/651632657.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/002/274/202105271333_5100001715_2_HSJ720H.jpg" group-title="地方频道", 上视东方影视
-http://192.168.3.3:35455/mgtv/617290047.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/2201/008/312/202209271630_2201008312_H169_1080.jpg" group-title="地方频道", 上海第一财经
-http://192.168.3.3:35455/mgtv/608780988.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/021/863/202307121521_1689144286039_H169_1080.jpg" group-title="地方频道", 南京新闻综合频道
-http://192.168.3.3:35455/mgtv/838109047.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/021/865/202307121700_1689146721503_H169_1080.jpg" group-title="地方频道", 南京教科频道
-http://192.168.3.3:35455/mgtv/838153729.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/021/864/202307121658_1689146982273_H169_1080.jpg" group-title="地方频道", 南京十八频道
-http://192.168.3.3:35455/mgtv/838151753.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/554/202104022139_5100186459_H169_1080.jpg" group-title="地方频道", 体育休闲频道
-http://192.168.3.3:35455/mgtv/626064707.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/508/202104022138_5100186409_H169_1080.jpg" group-title="地方频道", 江苏城市频道
-http://192.168.3.3:35455/mgtv/626064714.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/577/202104022139_5100186482_HSJ720H.jpg" group-title="地方频道", 江苏国际
-http://192.168.3.3:35455/mgtv/626064674.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/287/493/202104022139_5101012819_HSJ720H.jpg" group-title="地方频道", 江苏教育
-http://192.168.3.3:35455/mgtv/628008321.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/517/202104022138_5100186424_H169_1080.jpg" group-title="地方频道", 江苏影视频道
-http://192.168.3.3:35455/mgtv/626064697.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/513/202104022039_5100186420_H169_1080.jpg" group-title="地方频道", 江苏综艺频道
-http://192.168.3.3:35455/mgtv/626065193.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/520/202104022138_5100186429_H169_1080.jpg" group-title="地方频道", 公共新闻频道
-http://192.168.3.3:35455/mgtv/626064693.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/360/202212301654_5102012617_H169_1080.jpg" group-title="地方频道", 盐城新闻综合
-http://192.168.3.3:35455/mgtv/639731825.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/363/202104022141_5102012618_H169_1080.jpg" group-title="地方频道", 淮安新闻综合
-http://192.168.3.3:35455/mgtv/639731826.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/354/202104071213_5102012615_H169_1080.jpg" group-title="地方频道", 泰州新闻综合
-http://192.168.3.3:35455/mgtv/639731818.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/369/202104022140_5102012621_H169_1080.jpg" group-title="地方频道", 连云港新闻综合
-http://192.168.3.3:35455/mgtv/639731715.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/357/202104022141_5102012616_H169_1080.jpg" group-title="地方频道", 宿迁新闻综合
-http://192.168.3.3:35455/mgtv/639731832.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/368/202104022141_5102012620_H169_1080.jpg" group-title="地方频道", 徐州新闻综合
-http://192.168.3.3:35455/mgtv/639731747.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/553/202104022139_5100186455_H169_1080.jpg" group-title="地方频道", 优漫卡通频道
-http://192.168.3.3:35455/mgtv/626064703.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/230/666/202506111555_1749628490223_H169_1080.jpg" group-title="影视频道", 《长安的荔枝》主演作品集
-http://192.168.3.3:35455/mgtv/625133682.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/002/717/202504111600_1744357080920_H169_1080.jpg" group-title="影视频道", 中国航天“逆袭”之路
-http://192.168.3.3:35455/mgtv/617432318.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/035/175/202405061742_1714988181593_H169_1080.jpg" group-title="影视频道", 新片放映厅
-http://192.168.3.3:35455/mgtv/619495952.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/176/202504161629_1744788994468_H169_1080.jpg" group-title="影视频道", CHC影迷电影
-http://192.168.3.3:35455/mgtv/952383261.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/554/795/202308221159_1692676692674_H169_1080.jpg" group-title="影视频道", CHC动作电影
-http://192.168.3.3:35455/mgtv/644368714.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/554/911/202308221200_1692676825616_H169_1080.jpg" group-title="影视频道", CHC家庭影院
-http://192.168.3.3:35455/mgtv/644368373.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/019/525/202504151721_1744708803016_H169_1080.jpg" group-title="影视频道", 和美乡途轮播台
-http://192.168.3.3:35455/mgtv/713591450.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/315/684/202204010048_5101034200_H169_1080.jpg" group-title="影视频道", 高清大片
-http://192.168.3.3:35455/mgtv/629943678.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/2206/173/738/202304081513_2206173738_HSJ720H.jpg" group-title="影视频道", 南方影视
-http://192.168.3.3:35455/mgtv/614961829.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/019/527/202407181250_1721278183765_H169_1080.jpg" group-title="影视频道", 红色轮播台
-http://192.168.3.3:35455/mgtv/713600957.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/242/089/202504141650_1744619996761_H169_1080.jpg" group-title="其他频道", 深度对话
-http://192.168.3.3:35455/mgtv/625703337.m3u8
-
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/019/523/202506060000_1749138932995_H169_1080.jpg" group-title="其他频道", 新动力量创一流
-http://192.168.3.3:35455/mgtv/713589837.m3u8
-
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/592/947/202204010047_5101034296_H169_1080.jpg" group-title="其他频道", 赛事最经典
-http://192.168.3.3:35455/mgtv/646596895.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/341/085/202308221004_1692669748086_H169_1080.jpg" group-title="其他频道", 掼蛋精英赛
-http://192.168.3.3:35455/mgtv/631354620.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/315/687/202204010048_5101034219_H169_1080.jpg" group-title="其他频道", 体坛名栏汇
-http://192.168.3.3:35455/mgtv/629943305.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/751/211/202106111236_5102223687_201903181136295010914_HSJ720H.jpg" group-title="其他频道", 咪咕24小时体育台
-http://192.168.3.3:35455/mgtv/654102378.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/150/202407181432_1721283643483_H169_1080.jpg" group-title="其他频道", CETV1
-http://192.168.3.3:35455/mgtv/923287154.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/152/202407181432_1721283773509_H169_1080.jpg" group-title="其他频道", CETV2
-http://192.168.3.3:35455/mgtv/923287211.m3u8
-#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/154/202407181433_1721283860085_H169_1080.jpg" group-title="其他频道", CETV4
-http://192.168.3.3:35455/mgtv/923287339.m3u8
-#EXTINF:-1,tvg-id="cctv16" tvg-name="cctv16" tvg-logo="https://epg.v1.mk/logo/cctv16.png" group-title="央视频道",cctv16-NPTV
-http://192.168.3.3:35455/nptv/cctv16.m3u8
-#EXTINF:-1,tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://epg.v1.mk/logo/cctv4k.png" group-title="央视频道",cctv4k-NPTV
-http://192.168.3.3:35455/nptv/cctv4k.m3u8
-#EXTINF:-1,tvg-id="cctv8k" tvg-name="cctv8k" tvg-logo="https://epg.v1.mk/logo/cctv8k.png" group-title="央视频道",cctv8k-NPTV
-http://192.168.3.3:35455/nptv/cctv8k.m3u8
-
 #EXTINF:-1,tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://epg.v1.mk/logo/北京卫视.png" group-title="卫视频道",北京卫视-NPTV
 http://192.168.3.3:35455/nptv/beijing.m3u8
 #EXTINF:-1,tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="https://epg.v1.mk/logo/湖南卫视.png" group-title="卫视频道",湖南卫视-NPTV
@@ -224,10 +142,93 @@ http://192.168.3.3:35455/nptv/yunnan.m3u8
 #EXTINF:-1,tvg-id="兵团卫视" tvg-name="兵团卫视" tvg-logo="https://epg.v1.mk/logo/兵团卫视.png" group-title="卫视频道",兵团卫视-NPTV
 https://liveout.btzx.com.cn/62ds9e/yil08g.m3u8
 
+
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/002/275/202107191641_5100001716_H169_1080.jpg" group-title="地方频道", 上海新闻综合
+http://192.168.3.3:35455/mgtv/651632657.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/002/274/202105271333_5100001715_2_HSJ720H.jpg" group-title="地方频道", 上视东方影视
+http://192.168.3.3:35455/mgtv/617290047.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/2201/008/312/202209271630_2201008312_H169_1080.jpg" group-title="地方频道", 上海第一财经
+http://192.168.3.3:35455/mgtv/608780988.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/021/863/202307121521_1689144286039_H169_1080.jpg" group-title="地方频道", 南京新闻综合频道
+http://192.168.3.3:35455/mgtv/838109047.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/021/865/202307121700_1689146721503_H169_1080.jpg" group-title="地方频道", 南京教科频道
+http://192.168.3.3:35455/mgtv/838153729.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/021/864/202307121658_1689146982273_H169_1080.jpg" group-title="地方频道", 南京十八频道
+http://192.168.3.3:35455/mgtv/838151753.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/554/202104022139_5100186459_H169_1080.jpg" group-title="地方频道", 体育休闲频道
+http://192.168.3.3:35455/mgtv/626064707.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/508/202104022138_5100186409_H169_1080.jpg" group-title="地方频道", 江苏城市频道
+http://192.168.3.3:35455/mgtv/626064714.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/577/202104022139_5100186482_HSJ720H.jpg" group-title="地方频道", 江苏国际
+http://192.168.3.3:35455/mgtv/626064674.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/287/493/202104022139_5101012819_HSJ720H.jpg" group-title="地方频道", 江苏教育
+http://192.168.3.3:35455/mgtv/628008321.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/517/202104022138_5100186424_H169_1080.jpg" group-title="地方频道", 江苏影视频道
+http://192.168.3.3:35455/mgtv/626064697.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/513/202104022039_5100186420_H169_1080.jpg" group-title="地方频道", 江苏综艺频道
+http://192.168.3.3:35455/mgtv/626065193.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/520/202104022138_5100186429_H169_1080.jpg" group-title="地方频道", 公共新闻频道
+http://192.168.3.3:35455/mgtv/626064693.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/360/202212301654_5102012617_H169_1080.jpg" group-title="地方频道", 盐城新闻综合
+http://192.168.3.3:35455/mgtv/639731825.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/363/202104022141_5102012618_H169_1080.jpg" group-title="地方频道", 淮安新闻综合
+http://192.168.3.3:35455/mgtv/639731826.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/354/202104071213_5102012615_H169_1080.jpg" group-title="地方频道", 泰州新闻综合
+http://192.168.3.3:35455/mgtv/639731818.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/369/202104022140_5102012621_H169_1080.jpg" group-title="地方频道", 连云港新闻综合
+http://192.168.3.3:35455/mgtv/639731715.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/357/202104022141_5102012616_H169_1080.jpg" group-title="地方频道", 宿迁新闻综合
+http://192.168.3.3:35455/mgtv/639731832.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/469/368/202104022141_5102012620_H169_1080.jpg" group-title="地方频道", 徐州新闻综合
+http://192.168.3.3:35455/mgtv/639731747.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/260/553/202104022139_5100186455_H169_1080.jpg" group-title="地方频道", 优漫卡通频道
+http://192.168.3.3:35455/mgtv/626064703.m3u8
+
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/230/666/202506111555_1749628490223_H169_1080.jpg" group-title="影视频道", 《长安的荔枝》主演作品集
+http://192.168.3.3:35455/mgtv/625133682.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/002/717/202504111600_1744357080920_H169_1080.jpg" group-title="影视频道", 中国航天“逆袭”之路
+http://192.168.3.3:35455/mgtv/617432318.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/035/175/202405061742_1714988181593_H169_1080.jpg" group-title="影视频道", 新片放映厅
+http://192.168.3.3:35455/mgtv/619495952.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/176/202504161629_1744788994468_H169_1080.jpg" group-title="影视频道", CHC影迷电影
+http://192.168.3.3:35455/mgtv/952383261.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/554/795/202308221159_1692676692674_H169_1080.jpg" group-title="影视频道", CHC动作电影
+http://192.168.3.3:35455/mgtv/644368714.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/554/911/202308221200_1692676825616_H169_1080.jpg" group-title="影视频道", CHC家庭影院
+http://192.168.3.3:35455/mgtv/644368373.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/019/525/202504151721_1744708803016_H169_1080.jpg" group-title="影视频道", 和美乡途轮播台
+http://192.168.3.3:35455/mgtv/713591450.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/315/684/202204010048_5101034200_H169_1080.jpg" group-title="影视频道", 高清大片
+http://192.168.3.3:35455/mgtv/629943678.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/2206/173/738/202304081513_2206173738_HSJ720H.jpg" group-title="影视频道", 南方影视
+http://192.168.3.3:35455/mgtv/614961829.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/019/527/202407181250_1721278183765_H169_1080.jpg" group-title="影视频道", 红色轮播台
+http://192.168.3.3:35455/mgtv/713600957.m3u8
+
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/242/089/202504141650_1744619996761_H169_1080.jpg" group-title="其他频道", 深度对话
+http://192.168.3.3:35455/mgtv/625703337.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/019/523/202506060000_1749138932995_H169_1080.jpg" group-title="其他频道", 新动力量创一流
+http://192.168.3.3:35455/mgtv/713589837.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/592/947/202204010047_5101034296_H169_1080.jpg" group-title="其他频道", 赛事最经典
+http://192.168.3.3:35455/mgtv/646596895.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/341/085/202308221004_1692669748086_H169_1080.jpg" group-title="其他频道", 掼蛋精英赛
+http://192.168.3.3:35455/mgtv/631354620.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/315/687/202204010048_5101034219_H169_1080.jpg" group-title="其他频道", 体坛名栏汇
+http://192.168.3.3:35455/mgtv/629943305.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/751/211/202106111236_5102223687_201903181136295010914_HSJ720H.jpg" group-title="其他频道", 咪咕24小时体育台
+http://192.168.3.3:35455/mgtv/654102378.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/150/202407181432_1721283643483_H169_1080.jpg" group-title="其他频道", CETV1
+http://192.168.3.3:35455/mgtv/923287154.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/152/202407181432_1721283773509_H169_1080.jpg" group-title="其他频道", CETV2
+http://192.168.3.3:35455/mgtv/923287211.m3u8
+#EXTINF:-1 tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5910/022/154/202407181433_1721283860085_H169_1080.jpg" group-title="其他频道", CETV4
+http://192.168.3.3:35455/mgtv/923287339.m3u8
 #EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://epg.v1.mk/logo/咪咕4K.png" group-title="其他频道",咪咕4K-1
 http://192.168.3.3:35455/itv/3000000010000005180.m3u8?cdn=FifastbLive
 #EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://epg.v1.mk/logo/咪咕4K.png" group-title="其他频道",咪咕4K-2
 http://192.168.3.3:35455/itv/3000000010000015686.m3u8?cdn=FifastbLive
+
+
 
 #EXTINF:-1,tvg-id="咪咕4k" tvg-name="咪咕4k" tvg-logo="https://epg.v1.mk/logo/咪咕4k.png" group-title="咪咕体育",咪咕视频_8M1080_咪视通-1
 http://192.168.3.3:35455/itv/3000000001000005308.m3u8?cdn=FifastbLive
