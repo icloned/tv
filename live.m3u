@@ -36,6 +36,8 @@ http://192.168.3.3:35455/gptv/G_CCTV-15-HQ.m3u8
 http://192.168.3.3:35455/bst/cctv16hd4k@15000000.m3u8
 #EXTINF:-1,tvg-id="CCTV17" tvg-name="CCTV17" tvg-logo="https://11.112114.xyz/logo/CCTV17.png" group-title="央视频道",CCTV17农业农村 
 http://192.168.3.3:35455/gptv/G_CCTV-17-HQ.m3u8
+#EXTINF:-1,tvg-id="CCTV4K" tvg-name="CCTV4K" tvg-logo="https://11.112114.xyz/logo/CCTV4K.png" group-title="央视频道",CCTV-4K 
+http://192.168.3.3:35455/gptv/G_CCTV-4K-HD.m3u8
 #EXTINF:-1,tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://11.112114.xyz/logo/广东卫视.png" group-title="卫视频道",广东卫视高清 
 http://192.168.3.3:35455/gptv/G_GUANGDONG-HQ.m3u8
 #EXTINF:-1,tvg-id="江苏卫视" tvg-name="江苏卫视" tvg-logo="https://11.112114.xyz/logo/江苏卫视.png" group-title="卫视频道",江苏卫视超清 
@@ -145,8 +147,7 @@ http://192.168.3.3:35455/bst/cctvyyhd4m@4000000.m3u8
 http://192.168.3.3:35455/bst/cctv16hd4k@15000000.m3u8
 #EXTINF:-1,tvg-id="CCTV17" tvg-name="CCTV17" tvg-logo="https://11.112114.xyz/logo/CCTV17.png" group-title="BST-央视",CCTV17农业农村
 http://192.168.3.3:35455/bst/cctv17hd4m@4000000.m3u8
-#EXTINF:-1,tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://11.112114.xyz/logo/cctv4k.png" group-title="BST-央视",cctv4K
-http://192.168.3.3:35455/bst/cctv4k@15000000.m3u8
+
 
 #EXTINF:-1,tvg-id="东方卫视" tvg-name="东方卫视" tvg-logo="https://11.112114.xyz/logo/东方卫视.png" group-title="BST-卫视",东方卫视
 http://192.168.3.3:35455/bst/hddfws@4000000.m3u8
@@ -217,20 +218,21 @@ http://192.168.3.3:35455/bst/nxws@1300000.m3u8
 #EXTINF:-1,tvg-id="青海卫视" tvg-name="青海卫视" tvg-logo="https://11.112114.xyz/logo/青海卫视.png" group-title="BST-卫视",青海卫视
 http://192.168.3.3:35455/bst/qhws@1300000.m3u8
 
-#EXTINF:-1,tvg-id="CCTV4K" tvg-name="CCTV4K" tvg-logo="https://11.112114.xyz/logo/CCTV4K.png" group-title="4K频道",CCTV4K 
-http://192.168.3.3:35455/gptv/G_CCTV-4K-HD.m3u8
-#EXTINF:-1,tvg-id="北京卫视4K" tvg-name="北京卫视4K" tvg-logo="https://11.112114.xyz/logo/北京卫视4K.png" group-title="4K频道",北京卫视4K 
-http://192.168.3.3:35455/gptv/G_BEIJING-4K.m3u8
-#EXTINF:-1,tvg-id="电影4K" tvg-name="电影4K" tvg-logo="https://11.112114.xyz/logo/bestv4k.png" group-title="4K频道",电影4K
-http://192.168.3.3:35455/bst/dypd4k@15000000.m3u8
-#EXTINF:-1,tvg-id="少儿4K" tvg-name="少儿4K" tvg-logo="https://11.112114.xyz/logo/bestv4k.png" group-title="4K频道",少儿4K
-http://192.168.3.3:35455/bst/sepd4k@15000000.m3u8
-#EXTINF:-1,tvg-id="欢笑剧场4K" tvg-name="欢笑剧场4K" tvg-logo="https://11.112114.xyz/logo/欢笑剧场.png" group-title="4K频道",欢笑剧场4K
-http://192.168.3.3:35455/bst/hxjc4k@15000000.m3u8
+
 #EXTINF:-1,tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://11.112114.xyz/logo/cctv4k.png" group-title="4K频道",CCTV4K
 http://192.168.3.3:35455/bst/cctv4k@15000000.m3u8
-#EXTINF:-1,tvg-id="cctv164k" tvg-name="cctv164k" tvg-logo="https://11.112114.xyz/logo/cctv16.png" group-title="4K频道",CCTV16 奥运频道
+
+#EXTINF:-1,tvg-id="cctv164k" tvg-name="cctv164k" tvg-logo="https://11.112114.xyz/logo/cctv16.png" group-title="4K频道",CCTV16奥运频道
 http://192.168.3.3:35455/bst/cctv16hd4k@15000000.m3u8
+#EXTINF:-1,tvg-id="北京卫视4K" tvg-name="北京卫视4K" tvg-logo="https://11.112114.xyz/logo/北京卫视4K.png" group-title="4K频道",北京卫视
+http://192.168.3.3:35455/gptv/G_BEIJING-4K.m3u8
+#EXTINF:-1,tvg-id="电影4K" tvg-name="电影4K" tvg-logo="https://11.112114.xyz/logo/bestv4k.png" group-title="4K频道",电影
+http://192.168.3.3:35455/bst/dypd4k@15000000.m3u8
+#EXTINF:-1,tvg-id="少儿4K" tvg-name="少儿4K" tvg-logo="https://11.112114.xyz/logo/bestv4k.png" group-title="4K频道",少儿
+http://192.168.3.3:35455/bst/sepd4k@15000000.m3u8
+#EXTINF:-1,tvg-id="欢笑剧场4K" tvg-name="欢笑剧场4K" tvg-logo="https://11.112114.xyz/logo/欢笑剧场.png" group-title="4K频道",欢笑剧场
+http://192.168.3.3:35455/bst/hxjc4k@15000000.m3u8
+
 
 #EXTINF:-1,tvg-id="咪咕4K" tvg-name="咪咕4K" tvg-logo="https://11.112114.xyz/logo/咪咕4K.png" group-title="4K频道",咪咕4K-1
 http://192.168.3.3:35455/itv/3000000010000005180.m3u8?cdn=FifastbLive
