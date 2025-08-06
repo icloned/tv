@@ -40,6 +40,18 @@ https://mursor.ottiptv.cc/bst/cctv17hd4m@4000000.m3u8
 #EXTINF:-1,tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://11.112114.xyz/logo/cctv4k.png" group-title="央视频道",CCTV-4K
 https://mursor.ottiptv.cc/bst/cctv4k@15000000.m3u8
 
+
+#EXTINF:-1,tvg-id="凤凰卫视" tvg-name="凤凰卫视" tvg-logo="https://11.112114.xyz/logo/凤凰卫视.png" group-title="卫视频道",凤凰卫视中文1
+http://s1.an94tv.cfd/aktv/CH-3/AKTV.m3u8
+#EXTINF:-1,tvg-id="凤凰卫视" tvg-name="凤凰卫视" tvg-logo="https://11.112114.xyz/logo/凤凰卫视.png" group-title="卫视频道",凤凰卫视中文2
+http://api.mg.itv888.cn:8080/hls/2f80047f91e/index.m3u8
+#EXTINF:-1,tvg-id="凤凰卫视" tvg-name="凤凰卫视" tvg-logo="https://11.112114.xyz/logo/凤凰卫视.png" group-title="卫视频道",凤凰卫视中文3
+http://free.cnlive.club/channel/n496e6eec.m3u8
+#EXTINF:-1,tvg-id="凤凰卫视" tvg-name="凤凰卫视" tvg-logo="https://11.112114.xyz/logo/凤凰卫视.png" group-title="卫视频道",凤凰卫视中文4
+http://cdn.946985.xyz/live/fhzw/stream.m3u8
+#EXTINF:-1,tvg-id="凤凰卫视" tvg-name="凤凰卫视" tvg-logo="https://11.112114.xyz/logo/凤凰卫视.png" group-title="卫视频道",凤凰卫视中文5
+http://cdn.132.us.kg/live/fhzw/stream.m3u8
+
 #EXTINF:-1,tvg-id="山东卫视" tvg-name="山东卫视" tvg-logo="https://11.112114.xyz/logo/山东卫视.png" group-title="卫视频道",山东卫视 
 https://mursor.ottiptv.cc/bst/sdwshd@4000000.m3u8
 #EXTINF:-1,tvg-id="东方卫视" tvg-name="东方卫视" tvg-logo="https://11.112114.xyz/logo/东方卫视.png" group-title="卫视频道",东方卫视 
