@@ -40,11 +40,6 @@ http://192.168.3.3:35455/gptv/G_CCTV-17-HQ.m3u8
 http://192.168.3.3:35455/gptv/G_CCTV-4K-HD.m3u8
 
 
-
-
-
-#EXTINF:-1,tvg-id="凤凰卫视" tvg-name="凤凰卫视" tvg-logo="https://11.112114.xyz/logo/凤凰卫视.png" group-title="卫视频道",凤凰卫视
-http://cdn.946985.xyz/live/fhzw/stream.m3u8
 #EXTINF:-1,tvg-id="北京卫视4K" tvg-name="北京卫视4K" tvg-logo="https://11.112114.xyz/logo/北京卫视4K.png" group-title="卫视频道",北京卫视
 http://192.168.3.3:35455/gptv/G_BEIJING-4K.m3u8
 #EXTINF:-1,tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://11.112114.xyz/logo/广东卫视.png" group-title="卫视频道",广东卫视高清 
