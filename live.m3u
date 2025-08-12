@@ -1,9 +1,9 @@
 #EXTM3U x-tvg-url="https://epg.51zmt.top:8001/e.xml"
 
 #EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://11.112114.xyz/logo/CCTV1.png" group-title="央视频道",CCTV1综合频道 
-http://192.168.3.3:35455/gptv/G_CCTV-1-HQ.m3u8
+rtp://239.255.255.250:5140
 #EXTINF:-1,tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://11.112114.xyz/logo/CCTV2.png" group-title="央视频道",CCTV2财经频道 
-http://192.168.3.3:35455/gptv/G_CCTV-2-HQ.m3u8
+rtp://239.255.255.240:5140
 #EXTINF:-1,tvg-id="CCTV3" tvg-name="CCTV3" tvg-logo="https://11.112114.xyz/logo/CCTV3.png" group-title="央视频道",CCTV3综艺频道 
 http://192.168.3.3:35455/gptv/G_CCTV-3-HQ.m3u8
 #EXTINF:-1,tvg-id="CCTV4" tvg-name="CCTV4" tvg-logo="https://11.112114.xyz/logo/CCTV4.png" group-title="央视频道",CCTV4中文国际 
