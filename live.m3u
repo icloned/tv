@@ -5,7 +5,7 @@ rtp://239.253.255.250:5140
 #EXTINF:-1,tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://11.112114.xyz/logo/CCTV2.png" group-title="央视频道",CCTVX2财经频道 
 rtp://239.253.255.240:5140
 #EXTINF:-1,tvg-id="CCTV3" tvg-name="CCTV3" tvg-logo="https://11.112114.xyz/logo/CCTV3.png" group-title="央视频道",CCTV3综艺频道 
-http://192.168.3.3:35455/gptv/G_CCTV-3-HQ.m3u8
+rtp://239.253.0.1:5140
 #EXTINF:-1,tvg-id="CCTV4" tvg-name="CCTV4" tvg-logo="https://11.112114.xyz/logo/CCTV4.png" group-title="央视频道",CCTV4中文国际 
 http://192.168.3.3:35455/gptv/G_CCTV-4-HQ.m3u8
 #EXTINF:-1,tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://11.112114.xyz/logo/CCTV5.png" group-title="央视频道",CCTV5体育频道 
