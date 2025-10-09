@@ -1,14 +1,6 @@
 #EXTM3U
-#EXTINF:-1 group-title="TvLive" ,Brazzers1
-http://88.212.7.11/live/test_brazzers_hd_hevc/playlist.m3u8?auth=5822
-
-#EXTINF:-1 group-title="TvLive" ,Brazzers2
-http://88.212.7.11/live/test_brazzers_hd_hevc/playlist.m3u8?key=5822
-
-#EXTINF:-1 group-title="TvLive" ,Brazzers3
-http://88.212.7.11/live/test_brazzers_hd_hevc/playlist.m3u8?token=5822
-
-
+#EXTINF:-1 group-title="TvLive" password="5822",Brazzers1
+http://88.212.7.11/live/test_brazzers_hd_hevc/playlist.m3u8
 
 #EXTINF:-1 group-title="TvLive",Desire
 http://88.212.7.11/live/test_desire_hd_hevc/playlist.m3u8
