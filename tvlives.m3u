@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:-1 group-title="TvLive" tvg-password="5822",Brazzers
+#EXTINF:-1 group-title="TvLive" tvg-name="brazzers" tvg-password="5822",Brazzers
 http://88.212.7.11/live/test_brazzers_hd_hevc/playlist.m3u8
 #EXTINF:-1 group-title="TvLive",Desire
 http://88.212.7.11/live/test_desire_hd_hevc/playlist.m3u8
