@@ -155,6 +155,12 @@
             color: var(--text);
         }
 
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
         .nav-action,
         .button {
             display: inline-flex;
@@ -172,6 +178,13 @@
             min-height: 46px;
             background: rgba(120, 243, 255, 0.08);
             border-color: rgba(120, 243, 255, 0.36);
+        }
+
+        .nav-action-ghost {
+            min-height: 46px;
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: var(--muted);
         }
 
         .nav-action:hover,
@@ -778,7 +791,8 @@
                 inset: 40px 20px 72px 44px;
             }
 
-            .nav-links {
+            .nav-links,
+            .nav-action-ghost {
                 display: none;
             }
         }
@@ -881,7 +895,10 @@
                     <a href="#guide">体验建议</a>
                     <a href="#gallery">画面氛围</a>
                 </nav>
-                <a href="#portal" class="nav-action">快速进入</a>
+                <div class="nav-controls">
+                    <button id="logoutAccess" class="nav-action nav-action-ghost" type="button">退出</button>
+                    <a href="#portal" class="nav-action">快速进入</a>
+                </div>
             </div>
         </header>
 
@@ -1076,6 +1093,28 @@
                 }
             }
 
+            function clearPersistentAccess() {
+                try {
+                    window.localStorage.removeItem(PASSWORD_CACHE_KEY);
+                } catch (error) {
+                    console.error("Clear access cache failed:", error);
+                }
+            }
+
+            function showPasswordOverlay() {
+                var overlay = document.getElementById("passwordOverlay");
+                var mainContent = document.getElementById("mainContent");
+                var input = document.getElementById("passwordInput");
+                var message = document.getElementById("errorMessage");
+
+                mainContent.style.display = "none";
+                overlay.style.display = "flex";
+                document.body.style.overflow = "hidden";
+                message.style.display = "none";
+                input.value = "";
+                input.focus();
+            }
+
             function showMainContent() {
                 var overlay = document.getElementById("passwordOverlay");
                 var mainContent = document.getElementById("mainContent");
@@ -1117,23 +1156,24 @@
             }
 
             document.addEventListener("DOMContentLoaded", function () {
-                var overlay = document.getElementById("passwordOverlay");
-                var input = document.getElementById("passwordInput");
+                var logout = document.getElementById("logoutAccess");
                 var submit = document.getElementById("submitPassword");
 
                 if (hasPersistentAccess()) {
                     showMainContent();
                 } else {
-                    overlay.style.display = "flex";
-                    document.body.style.overflow = "hidden";
-                    input.focus();
+                    showPasswordOverlay();
                 }
 
                 submit.addEventListener("click", checkPassword);
-                input.addEventListener("keydown", function (event) {
+                document.getElementById("passwordInput").addEventListener("keydown", function (event) {
                     if (event.key === "Enter") {
                         checkPassword();
                     }
+                });
+                logout.addEventListener("click", function () {
+                    clearPersistentAccess();
+                    showPasswordOverlay();
                 });
             });
         })();
