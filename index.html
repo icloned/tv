@@ -1053,8 +1053,37 @@
     </div>
     <script>
         (function () {
+            var PASSWORD_CACHE_KEY = "icloned_tv_access_granted";
+
             function encrypt(str) {
                 return btoa(str.split("").reverse().join(""));
+            }
+
+            function persistAccess() {
+                try {
+                    window.localStorage.setItem(PASSWORD_CACHE_KEY, "1");
+                } catch (error) {
+                    console.error("Persist access failed:", error);
+                }
+            }
+
+            function hasPersistentAccess() {
+                try {
+                    return window.localStorage.getItem(PASSWORD_CACHE_KEY) === "1";
+                } catch (error) {
+                    console.error("Read access cache failed:", error);
+                    return false;
+                }
+            }
+
+            function showMainContent() {
+                var overlay = document.getElementById("passwordOverlay");
+                var mainContent = document.getElementById("mainContent");
+
+                overlay.style.display = "none";
+                mainContent.style.display = "block";
+                document.body.style.overflow = "auto";
+                revealVisible();
             }
 
             function revealVisible() {
@@ -1076,15 +1105,11 @@
             function checkPassword() {
                 var input = document.getElementById("passwordInput");
                 var message = document.getElementById("errorMessage");
-                var overlay = document.getElementById("passwordOverlay");
-                var mainContent = document.getElementById("mainContent");
                 var encryptedPassword = "MjI4NQ==";
 
                 if (encrypt(input.value) === encryptedPassword) {
-                    overlay.style.display = "none";
-                    mainContent.style.display = "block";
-                    document.body.style.overflow = "auto";
-                    revealVisible();
+                    persistAccess();
+                    showMainContent();
                 } else {
                     message.style.display = "block";
                     input.value = "";
@@ -1096,9 +1121,13 @@
                 var input = document.getElementById("passwordInput");
                 var submit = document.getElementById("submitPassword");
 
-                overlay.style.display = "flex";
-                document.body.style.overflow = "hidden";
-                input.focus();
+                if (hasPersistentAccess()) {
+                    showMainContent();
+                } else {
+                    overlay.style.display = "flex";
+                    document.body.style.overflow = "hidden";
+                    input.focus();
+                }
 
                 submit.addEventListener("click", checkPassword);
                 input.addEventListener("keydown", function (event) {
