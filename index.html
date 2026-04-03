@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <meta name="description" content="更现代的私有影视入口页，提供订阅复制、线路提示与观影氛围展示。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg: #07111f;
@@ -24,8 +27,13 @@
             --container: min(1180px, calc(100vw - 48px));
         }
 
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             margin: 0;
@@ -65,10 +73,25 @@
             z-index: -1;
         }
 
-        img { display: block; max-width: 100%; }
-        a { color: inherit; text-decoration: none; }
-        button, input { font: inherit; }
-        .shell { width: var(--container); margin: 0 auto; }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        .shell {
+            width: var(--container);
+            margin: 0 auto;
+        }
 
         .site-header {
             position: sticky;
@@ -87,7 +110,11 @@
             gap: 20px;
         }
 
-        .brand { display: flex; align-items: center; gap: 14px; }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
 
         .brand-mark {
             width: 42px;
@@ -124,7 +151,9 @@
             font-size: 0.94rem;
         }
 
-        .nav-links a:hover { color: var(--text); }
+        .nav-links a:hover {
+            color: var(--text);
+        }
 
         .nav-action,
         .button {
@@ -146,7 +175,9 @@
         }
 
         .nav-action:hover,
-        .button:hover { transform: translateY(-3px); }
+        .button:hover {
+            transform: translateY(-3px);
+        }
 
         .button-primary {
             background: linear-gradient(135deg, var(--accent), var(--accent-strong));
@@ -205,8 +236,8 @@
 
         .hero-copy h1 {
             margin: 18px 0;
-            max-width: 7.2ch;
-            font-size: clamp(2.85rem, 5.4vw, 5.35rem);
+            max-width: 12.2ch;
+            font-size: clamp(2.55rem, 5.4vw, 5.35rem);
             line-height: 1.02;
             letter-spacing: -0.05em;
             text-wrap: balance;
@@ -231,10 +262,18 @@
             font-size: 1rem;
             text-wrap: pretty;
         }
+
         .hero-actions,
         .hero-notes,
-        .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-        .hero-actions { margin-bottom: 30px; }
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hero-actions {
+            margin-bottom: 30px;
+        }
 
         .hero-notes span::before {
             content: "";
@@ -247,8 +286,15 @@
             box-shadow: 0 0 18px rgba(255, 211, 109, 0.52);
         }
 
-        .hero-visual { position: relative; min-height: 650px; }
-        .visual-stack { position: absolute; inset: 0; }
+        .hero-visual {
+            position: relative;
+            min-height: 650px;
+        }
+
+        .visual-stack {
+            position: absolute;
+            inset: 0;
+        }
 
         .poster-large,
         .poster-small,
@@ -265,7 +311,10 @@
 
         .poster-large,
         .poster-small,
-        .floating-copy { position: absolute; overflow: hidden; }
+        .floating-copy {
+            position: absolute;
+            overflow: hidden;
+        }
 
         .poster-large {
             inset: 40px 28px 88px 86px;
@@ -303,10 +352,19 @@
         .floating-copy strong,
         .signal-item strong,
         .story-row strong,
-        .gallery-copy strong { display: block; margin-bottom: 8px; }
+        .gallery-copy strong {
+            display: block;
+            margin-bottom: 8px;
+        }
 
-        .section { padding: 72px 0; }
-        .section-head { max-width: 640px; margin-bottom: 34px; }
+        .section {
+            padding: 72px 0;
+        }
+
+        .section-head {
+            max-width: 640px;
+            margin-bottom: 34px;
+        }
 
         .section-head span,
         .portal-chip {
@@ -321,8 +379,17 @@
             font-size: 0.76rem;
         }
 
-        .section-head h2 { margin: 12px 0; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.04; }
-        .signal-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .section-head h2 {
+            margin: 12px 0;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.04;
+        }
+
+        .signal-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
 
         .signal-item {
             padding: 24px 22px;
@@ -372,8 +439,21 @@
             pointer-events: none;
         }
 
-        .portal-main h3 { position: relative; z-index: 1; margin: 18px 0 12px; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.02; max-width: 480px; }
-        .portal-main p { position: relative; z-index: 1; max-width: 520px; margin: 0; }
+        .portal-main h3 {
+            position: relative;
+            z-index: 1;
+            margin: 18px 0 12px;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            line-height: 1.02;
+            max-width: 480px;
+        }
+
+        .portal-main p {
+            position: relative;
+            z-index: 1;
+            max-width: 520px;
+            margin: 0;
+        }
 
         .portal-side {
             padding: 28px;
@@ -383,8 +463,15 @@
             gap: 22px;
         }
 
-        .portal-side h3 { margin: 0; font-size: 1.3rem; }
-        .copy-group { display: grid; gap: 14px; }
+        .portal-side h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .copy-group {
+            display: grid;
+            gap: 14px;
+        }
 
         .copy-button {
             width: 100%;
@@ -401,12 +488,16 @@
         }
 
         .copy-button span,
-        .copy-button small { display: block; }
+        .copy-button small {
+            display: block;
+        }
+
         .copy-button span {
             font-size: 0.98rem;
             line-height: 1.45;
             white-space: nowrap;
         }
+
         .copy-button small {
             margin-top: 0;
             color: var(--muted);
@@ -414,9 +505,24 @@
             line-height: 1.55;
             text-wrap: pretty;
         }
-        .copy-button:hover { background: rgba(120, 243, 255, 0.12); border-color: rgba(120, 243, 255, 0.26); box-shadow: 0 18px 42px rgba(79, 209, 255, 0.14); }
-        .copy-button.copied { background: rgba(120, 243, 255, 0.18); border-color: rgba(120, 243, 255, 0.5); }
-        .portal-note { padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: var(--muted); font-size: 0.92rem; }
+
+        .copy-button:hover {
+            background: rgba(120, 243, 255, 0.12);
+            border-color: rgba(120, 243, 255, 0.26);
+            box-shadow: 0 18px 42px rgba(79, 209, 255, 0.14);
+        }
+
+        .copy-button.copied {
+            background: rgba(120, 243, 255, 0.18);
+            border-color: rgba(120, 243, 255, 0.5);
+        }
+
+        .portal-note {
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
 
         .story-grid {
             display: grid;
@@ -425,14 +531,20 @@
             align-items: center;
         }
 
-        .story-copy { display: grid; gap: 22px; }
+        .story-copy {
+            display: grid;
+            gap: 22px;
+        }
 
         .story-row {
             padding-bottom: 22px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .story-row:last-child { padding-bottom: 0; border-bottom: 0; }
+        .story-row:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
 
         .story-visual {
             min-height: 520px;
@@ -443,7 +555,9 @@
             transition: transform 0.35s ease;
         }
 
-        .story-visual:hover { transform: translateY(-8px); }
+        .story-visual:hover {
+            transform: translateY(-8px);
+        }
 
         .gallery {
             display: grid;
@@ -451,7 +565,10 @@
             gap: 18px;
         }
 
-        .gallery-column { display: grid; gap: 18px; }
+        .gallery-column {
+            display: grid;
+            gap: 18px;
+        }
 
         .gallery-card {
             position: relative;
@@ -461,10 +578,28 @@
             isolation: isolate;
         }
 
-        .gallery-card.tall { min-height: 500px; }
-        .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s ease; }
-        .gallery-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4, 10, 20, 0.06), rgba(4, 10, 20, 0.8)); z-index: 1; }
-        .gallery-card:hover img { transform: scale(1.05); }
+        .gallery-card.tall {
+            min-height: 500px;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.55s ease;
+        }
+
+        .gallery-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(4, 10, 20, 0.06), rgba(4, 10, 20, 0.8));
+            z-index: 1;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
 
         .gallery-copy {
             position: absolute;
@@ -474,7 +609,9 @@
             z-index: 2;
         }
 
-        .cta { padding: 0 0 88px; }
+        .cta {
+            padding: 0 0 88px;
+        }
 
         .cta-panel {
             position: relative;
@@ -495,8 +632,19 @@
             background: radial-gradient(circle, rgba(120, 243, 255, 0.3), transparent 68%);
         }
 
-        .cta-panel h2 { position: relative; margin: 0 0 14px; max-width: 680px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.02; }
-        .cta-panel p { position: relative; max-width: 660px; margin: 0 0 26px; }
+        .cta-panel h2 {
+            position: relative;
+            margin: 0 0 14px;
+            max-width: 680px;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.02;
+        }
+
+        .cta-panel p {
+            position: relative;
+            max-width: 660px;
+            margin: 0 0 26px;
+        }
 
         .reveal {
             opacity: 0;
@@ -505,7 +653,10 @@
             transition-delay: var(--delay, 0ms);
         }
 
-        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         #passwordOverlay {
             position: fixed;
@@ -539,8 +690,14 @@
             background: rgba(7, 17, 31, 0.8);
         }
 
-        #passwordForm h2 { margin: 0 0 10px; font-size: 2rem; }
-        #passwordForm p { margin: 0 0 20px; }
+        #passwordForm h2 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+        }
+
+        #passwordForm p {
+            margin: 0 0 20px;
+        }
 
         #passwordInput {
             width: 100%;
@@ -553,63 +710,147 @@
             background: rgba(255, 255, 255, 0.06);
         }
 
-        #passwordInput:focus { border-color: rgba(120, 243, 255, 0.54); box-shadow: 0 0 0 4px rgba(120, 243, 255, 0.12); background: rgba(255, 255, 255, 0.09); }
-        #passwordInput::placeholder { color: rgba(238, 246, 255, 0.52); }
-        #submitPassword { width: 100%; margin-top: 14px; }
-        #errorMessage { display: none; margin-top: 14px; color: #ff9f9f; font-size: 0.92rem; }
+        #passwordInput:focus {
+            border-color: rgba(120, 243, 255, 0.54);
+            box-shadow: 0 0 0 4px rgba(120, 243, 255, 0.12);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        #passwordInput::placeholder {
+            color: rgba(238, 246, 255, 0.52);
+        }
+
+        #submitPassword {
+            width: 100%;
+            margin-top: 14px;
+        }
+
+        #errorMessage {
+            display: none;
+            margin-top: 14px;
+            color: #ff9f9f;
+            font-size: 0.92rem;
+        }
 
         @keyframes drift {
-            0%, 100% { transform: translateY(0) rotate(7deg); }
-            50% { transform: translateY(-12px) rotate(4deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(7deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(4deg);
+            }
         }
 
         @keyframes drift-small {
-            0%, 100% { transform: translateY(0) rotate(-9deg); }
-            50% { transform: translateY(14px) rotate(-6deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-9deg);
+            }
+
+            50% {
+                transform: translateY(14px) rotate(-6deg);
+            }
         }
 
         @media (max-width: 1024px) {
+
             .hero-grid,
             .portal,
             .story-grid,
-            .gallery { grid-template-columns: 1fr; }
-            .hero { min-height: auto; padding-top: 28px; }
-            .hero-visual { min-height: 580px; }
-            .poster-large { inset: 40px 20px 72px 44px; }
-            .nav-links { display: none; }
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 28px;
+            }
+
+            .hero-visual {
+                min-height: 580px;
+            }
+
+            .poster-large {
+                inset: 40px 20px 72px 44px;
+            }
+
+            .nav-links {
+                display: none;
+            }
         }
 
         @media (max-width: 720px) {
-            :root { --container: min(100vw - 28px, 1180px); }
-            .site-header .shell { min-height: 70px; }
+            :root {
+                --container: min(100vw - 28px, 1180px);
+            }
+
+            .site-header .shell {
+                min-height: 70px;
+            }
+
             .hero-copy h1 {
                 max-width: 8.5ch;
                 font-size: clamp(2.4rem, 13vw, 3.8rem);
                 line-height: 1.04;
             }
-            .hero-visual { min-height: 460px; }
-            .poster-large { inset: 56px 12px 84px 20px; border-radius: 26px; }
-            .poster-small { width: 176px; border-radius: 22px; }
-            .floating-copy { width: calc(100% - 38px); padding: 20px; border-radius: 22px; }
-            .signal-strip { grid-template-columns: 1fr; }
+
+            .hero-visual {
+                min-height: 460px;
+            }
+
+            .poster-large {
+                inset: 56px 12px 84px 20px;
+                border-radius: 26px;
+            }
+
+            .poster-small {
+                width: 176px;
+                border-radius: 22px;
+            }
+
+            .floating-copy {
+                width: calc(100% - 38px);
+                padding: 20px;
+                border-radius: 22px;
+            }
+
+            .signal-strip {
+                grid-template-columns: 1fr;
+            }
+
             .portal-main,
             .story-visual,
-            .gallery-card.tall { min-height: 400px; }
+            .gallery-card.tall {
+                min-height: 400px;
+            }
+
             .portal-main,
             .portal-side,
             .cta-panel,
-            #passwordForm { padding: 24px; }
+            #passwordForm {
+                padding: 24px;
+            }
+
             .copy-button {
                 grid-template-columns: 1fr;
                 row-gap: 6px;
             }
+
             .copy-button span {
                 white-space: normal;
             }
-            .gallery-card { min-height: 220px; }
+
+            .gallery-card {
+                min-height: 220px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="passwordOverlay">
         <div id="passwordForm">
@@ -707,16 +948,19 @@
                             <h3>订阅入口</h3>
                             <p>复制后建议先做延迟测试，再检查出口 IP 风控情况。非 -1 节点通常更值得优先尝试。</p>
                             <div class="copy-group">
-                                <button type="button" class="button copy-button" data-text="SubsCheck 订阅" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">
+                                <button type="button" class="button copy-button" data-text="SubsCheck 订阅"
+                                    onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">
                                     <span>SubsCheck 订阅</span>
                                     <small>适合快速导入与基础检查</small>
                                 </button>
-                                <button type="button" class="button copy-button" data-text="SubsCheck Clash 订阅" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')">
+                                <button type="button" class="button copy-button" data-text="SubsCheck Clash 订阅"
+                                    onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')">
                                     <span>SubsCheck Clash 订阅</span>
                                     <small>适合 Mihomo / Clash 系客户端</small>
                                 </button>
                             </div>
-                            <p class="portal-note">风控检测：<a href="http://www.ping0.cc" target="_blank" rel="noreferrer">ping0.cc</a></p>
+                            <p class="portal-note">风控检测：<a href="http://www.ping0.cc" target="_blank"
+                                    rel="noreferrer">ping0.cc</a></p>
                         </aside>
                     </div>
                 </div>
@@ -759,7 +1003,8 @@
                     <div class="gallery">
                         <div class="gallery-column">
                             <article class="gallery-card tall reveal">
-                                <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?auto=format&fit=crop&w=1200&q=80" alt="夜晚的城市影院氛围">
+                                <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?auto=format&fit=crop&w=1200&q=80"
+                                    alt="夜晚的城市影院氛围">
                                 <div class="gallery-copy">
                                     <strong>City light / Late screen</strong>
                                     <p>城市夜色与屏幕冷光的组合，决定了整页的色温和情绪。</p>
@@ -768,14 +1013,16 @@
                         </div>
                         <div class="gallery-column">
                             <article class="gallery-card reveal" style="--delay: 90ms;">
-                                <img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=900&q=80" alt="投影与沙发场景">
+                                <img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=900&q=80"
+                                    alt="投影与沙发场景">
                                 <div class="gallery-copy">
                                     <strong>Home projection</strong>
                                     <p>适合放松的低照度空间，比高亮度界面更贴近夜间使用场景。</p>
                                 </div>
                             </article>
                             <article class="gallery-card reveal" style="--delay: 180ms;">
-                                <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=900&q=80" alt="现代客厅中的大屏幕">
+                                <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=900&q=80"
+                                    alt="现代客厅中的大屏幕">
                                 <div class="gallery-copy">
                                     <strong>Large screen mode</strong>
                                     <p>页面气质跟播放环境统一，入口自然就不会显得突兀。</p>
@@ -801,15 +1048,15 @@
         </main>
     </div>
     <script>
-        (function() {
+        (function () {
             function encrypt(str) {
                 return btoa(str.split("").reverse().join(""));
             }
 
             function revealVisible() {
                 var elements = document.querySelectorAll(".reveal");
-                var observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             entry.target.classList.add("is-visible");
                             observer.unobserve(entry.target);
@@ -817,7 +1064,7 @@
                     });
                 }, { threshold: 0.16 });
 
-                elements.forEach(function(element) {
+                elements.forEach(function (element) {
                     observer.observe(element);
                 });
             }
@@ -840,7 +1087,7 @@
                 }
             }
 
-            document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("DOMContentLoaded", function () {
                 var overlay = document.getElementById("passwordOverlay");
                 var input = document.getElementById("passwordInput");
                 var submit = document.getElementById("submitPassword");
@@ -850,7 +1097,7 @@
                 input.focus();
 
                 submit.addEventListener("click", checkPassword);
-                input.addEventListener("keydown", function(event) {
+                input.addEventListener("keydown", function (event) {
                     if (event.key === "Enter") {
                         checkPassword();
                     }
@@ -859,7 +1106,7 @@
         })();
 
         function copyToClipboard(button, text) {
-            navigator.clipboard.writeText(text).then(function() {
+            navigator.clipboard.writeText(text).then(function () {
                 var label = button.querySelector("span");
                 var description = button.querySelector("small");
                 var originalText = button.getAttribute("data-text");
@@ -869,15 +1116,16 @@
                 description.textContent = "链接已经写入剪贴板";
                 button.classList.add("copied");
 
-                window.setTimeout(function() {
+                window.setTimeout(function () {
                     label.textContent = originalText;
                     description.textContent = originalDescription;
                     button.classList.remove("copied");
                 }, 1800);
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.error("Copy failed:", error);
             });
         }
     </script>
 </body>
+
 </html>
