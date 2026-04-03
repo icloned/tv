@@ -3,301 +3,817 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub 简介</title>
-    <script>
-        // 防止保存页面
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
-                e.preventDefault();
-                alert('禁止保存页面！');
-                return false;
-            }
-        });
-
-        // 禁用右键菜单
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            return false;
-        });
-
-        // 禁用选择文本
-        document.addEventListener('selectstart', function(e) {
-            e.preventDefault();
-            return false;
-        });
-    </script>
+    <title>Icloned TV | Private Stream Portal</title>
+    <meta name="description" content="更现代的私有影视入口页，提供订阅复制、线路提示与观影氛围展示。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #07111f;
+            --surface: rgba(10, 24, 44, 0.58);
+            --surface-strong: rgba(9, 21, 39, 0.82);
+            --text: #eef6ff;
+            --muted: rgba(238, 246, 255, 0.72);
+            --accent: #78f3ff;
+            --accent-strong: #4fd1ff;
+            --accent-warm: #ffd36d;
+            --shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+            --radius-xl: 32px;
+            --radius-lg: 24px;
+            --container: min(1180px, calc(100vw - 48px));
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Noto Sans SC", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(69, 168, 255, 0.2), transparent 32%),
+                radial-gradient(circle at 85% 10%, rgba(255, 184, 76, 0.16), transparent 24%),
+                radial-gradient(circle at bottom right, rgba(96, 67, 255, 0.15), transparent 28%),
+                #030914;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(3, 9, 20, 0.1), rgba(3, 9, 20, 0.78)),
+                url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80") center/cover;
+            opacity: 0.26;
+            transform: scale(1.04);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: radial-gradient(circle at center, black 45%, transparent 82%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        button, input { font: inherit; }
+        .shell { width: var(--container); margin: 0 auto; }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(18px);
+            background: linear-gradient(180deg, rgba(4, 10, 20, 0.88), rgba(4, 10, 20, 0.36));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .site-header .shell {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand { display: flex; align-items: center; gap: 14px; }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(120, 243, 255, 0.95), rgba(79, 209, 255, 0.25));
+            box-shadow: 0 18px 48px rgba(79, 209, 255, 0.22);
+            color: #03111f;
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+        }
+
+        .brand-copy strong {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand-copy span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .nav-action,
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 22px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+        }
+
+        .nav-action {
+            min-height: 46px;
+            background: rgba(120, 243, 255, 0.08);
+            border-color: rgba(120, 243, 255, 0.36);
+        }
+
+        .nav-action:hover,
+        .button:hover { transform: translateY(-3px); }
+
+        .button-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            color: #03111f;
+            box-shadow: 0 20px 45px rgba(79, 209, 255, 0.28);
+        }
+
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: var(--text);
+        }
+
+        .hero {
+            min-height: calc(100svh - 78px);
+            display: grid;
+            align-items: center;
+            padding: 48px 0 64px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+            gap: 42px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .hero-copy h1,
+        .section-head h2,
+        .portal-main h3,
+        .cta-panel h2,
+        #passwordForm h2 {
+            font-family: "Space Grotesk", "Noto Sans SC", sans-serif;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-copy h1 {
+            margin: 18px 0;
+            font-size: clamp(3.4rem, 7vw, 6.8rem);
+            line-height: 0.94;
+        }
+
+        .hero-copy p,
+        .section-head p,
+        .signal-item p,
+        .portal-main p,
+        .portal-side p,
+        .story-row p,
+        .gallery-copy p,
+        .cta-panel p,
+        #passwordForm p {
+            color: var(--muted);
+            line-height: 1.85;
+        }
+
+        .hero-copy p { max-width: 560px; margin: 0 0 28px; font-size: 1.05rem; }
+        .hero-actions,
+        .hero-notes,
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+        .hero-actions { margin-bottom: 30px; }
+
+        .hero-notes span::before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background: var(--accent-warm);
+            box-shadow: 0 0 18px rgba(255, 211, 109, 0.52);
+        }
+
+        .hero-visual { position: relative; min-height: 650px; }
+        .visual-stack { position: absolute; inset: 0; }
+
+        .poster-large,
+        .poster-small,
+        .floating-copy,
+        .portal-main,
+        .portal-side,
+        .story-visual,
+        .gallery-card,
+        .cta-panel,
+        #passwordForm {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: var(--shadow);
+        }
+
+        .poster-large,
+        .poster-small,
+        .floating-copy { position: absolute; overflow: hidden; }
+
+        .poster-large {
+            inset: 40px 28px 88px 86px;
+            border-radius: 34px;
+            background:
+                linear-gradient(180deg, rgba(5, 9, 18, 0.02), rgba(5, 9, 18, 0.72)),
+                url("https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1200&q=80") center/cover;
+            animation: drift 9s ease-in-out infinite;
+            transform: rotate(7deg);
+        }
+
+        .poster-small {
+            right: -8px;
+            top: 0;
+            width: min(45vw, 260px);
+            aspect-ratio: 0.85;
+            border-radius: 28px;
+            background:
+                linear-gradient(180deg, rgba(5, 9, 18, 0.08), rgba(5, 9, 18, 0.72)),
+                url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80") center/cover;
+            animation: drift-small 7s ease-in-out infinite;
+            transform: rotate(-9deg);
+        }
+
+        .floating-copy {
+            left: 0;
+            bottom: 0;
+            width: min(68vw, 360px);
+            padding: 26px;
+            border-radius: 28px;
+            background: rgba(6, 16, 30, 0.78);
+            backdrop-filter: blur(18px);
+        }
+
+        .floating-copy strong,
+        .signal-item strong,
+        .story-row strong,
+        .gallery-copy strong { display: block; margin-bottom: 8px; }
+
+        .section { padding: 72px 0; }
+        .section-head { max-width: 640px; margin-bottom: 34px; }
+
+        .section-head span,
+        .portal-chip {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--accent);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.76rem;
+        }
+
+        .section-head h2 { margin: 12px 0; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.04; }
+        .signal-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+        .signal-item {
+            padding: 24px 22px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+            transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+        }
+
+        .signal-item:hover {
+            transform: translateY(-6px);
+            border-color: rgba(120, 243, 255, 0.3);
+            background: linear-gradient(180deg, rgba(120, 243, 255, 0.12), rgba(255, 255, 255, 0.03));
+        }
+
+        .portal {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(310px, 420px);
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .portal-main,
+        .portal-side {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+        }
+
+        .portal-main {
+            position: relative;
+            min-height: 540px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 34px;
+            background:
+                linear-gradient(180deg, rgba(5, 9, 18, 0.16), rgba(5, 9, 18, 0.86)),
+                url("https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1400&q=80") center/cover;
+        }
+
+        .portal-main::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(120, 243, 255, 0.12), transparent 42%);
+            pointer-events: none;
+        }
+
+        .portal-main h3 { position: relative; z-index: 1; margin: 18px 0 12px; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.02; max-width: 480px; }
+        .portal-main p { position: relative; z-index: 1; max-width: 520px; margin: 0; }
+
+        .portal-side {
+            padding: 28px;
+            background: linear-gradient(180deg, var(--surface-strong), rgba(5, 15, 30, 0.92));
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .portal-side h3 { margin: 0; font-size: 1.3rem; }
+        .copy-group { display: grid; gap: 14px; }
+
+        .copy-button {
+            width: 100%;
+            justify-content: space-between;
+            padding: 18px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text);
+            text-align: left;
+        }
+
+        .copy-button span,
+        .copy-button small { display: block; }
+        .copy-button small { margin-top: 6px; color: var(--muted); font-size: 0.84rem; }
+        .copy-button:hover { background: rgba(120, 243, 255, 0.12); border-color: rgba(120, 243, 255, 0.26); box-shadow: 0 18px 42px rgba(79, 209, 255, 0.14); }
+        .copy-button.copied { background: rgba(120, 243, 255, 0.18); border-color: rgba(120, 243, 255, 0.5); }
+        .portal-note { padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: var(--muted); font-size: 0.92rem; }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 26px;
+            align-items: center;
+        }
+
+        .story-copy { display: grid; gap: 22px; }
+
+        .story-row {
+            padding-bottom: 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .story-row:last-child { padding-bottom: 0; border-bottom: 0; }
+
+        .story-visual {
+            min-height: 520px;
+            border-radius: var(--radius-xl);
+            background:
+                linear-gradient(180deg, rgba(5, 9, 18, 0.18), rgba(5, 9, 18, 0.78)),
+                url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1200&q=80") center/cover;
+            transition: transform 0.35s ease;
+        }
+
+        .story-visual:hover { transform: translateY(-8px); }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 18px;
+        }
+
+        .gallery-column { display: grid; gap: 18px; }
+
+        .gallery-card {
+            position: relative;
+            min-height: 240px;
+            border-radius: 28px;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .gallery-card.tall { min-height: 500px; }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s ease; }
+        .gallery-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4, 10, 20, 0.06), rgba(4, 10, 20, 0.8)); z-index: 1; }
+        .gallery-card:hover img { transform: scale(1.05); }
+
+        .gallery-copy {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            bottom: 22px;
+            z-index: 2;
+        }
+
+        .cta { padding: 0 0 88px; }
+
+        .cta-panel {
+            position: relative;
+            overflow: hidden;
+            padding: 42px;
+            border-radius: 34px;
+            background: linear-gradient(135deg, rgba(120, 243, 255, 0.14), rgba(7, 17, 31, 0.82) 38%, rgba(255, 211, 109, 0.14));
+        }
+
+        .cta-panel::before {
+            content: "";
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            right: -120px;
+            top: -120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(120, 243, 255, 0.3), transparent 68%);
+        }
+
+        .cta-panel h2 { position: relative; margin: 0 0 14px; max-width: 680px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.02; }
+        .cta-panel p { position: relative; max-width: 660px; margin: 0 0 26px; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            transition-delay: var(--delay, 0ms);
+        }
+
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
         #passwordOverlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            display: flex;
-            justify-content: center;
+            inset: 0;
+            display: none;
             align-items: center;
-            z-index: 9999;
+            justify-content: center;
+            padding: 24px;
+            z-index: 120;
+            background:
+                linear-gradient(180deg, rgba(4, 10, 20, 0.28), rgba(4, 10, 20, 0.78)),
+                url("https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=1400&q=80") center/cover;
+        }
+
+        #passwordOverlay::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top, rgba(120, 243, 255, 0.28), transparent 32%),
+                radial-gradient(circle at bottom right, rgba(255, 211, 109, 0.18), transparent 28%),
+                rgba(3, 9, 20, 0.66);
+            backdrop-filter: blur(10px);
         }
 
         #passwordForm {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(81, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
+            position: relative;
+            width: min(420px, 100%);
+            padding: 34px;
+            border-radius: 30px;
+            background: rgba(7, 17, 31, 0.8);
         }
+
+        #passwordForm h2 { margin: 0 0 10px; font-size: 2rem; }
+        #passwordForm p { margin: 0 0 20px; }
 
         #passwordInput {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 15px;
-            border-radius: 8px;
-            color: white;
-            margin: 10px 0;
-            width: 200px;
+            width: 100%;
+            min-height: 54px;
+            padding: 0 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
             outline: none;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.06);
         }
 
-        #passwordInput:focus {
-            border-color: rgba(255, 255, 255, 0.5);
-            box-shadow: none;
+        #passwordInput:focus { border-color: rgba(120, 243, 255, 0.54); box-shadow: 0 0 0 4px rgba(120, 243, 255, 0.12); background: rgba(255, 255, 255, 0.09); }
+        #passwordInput::placeholder { color: rgba(238, 246, 255, 0.52); }
+        #submitPassword { width: 100%; margin-top: 14px; }
+        #errorMessage { display: none; margin-top: 14px; color: #ff9f9f; font-size: 0.92rem; }
+
+        @keyframes drift {
+            0%, 100% { transform: translateY(0) rotate(7deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
         }
 
-        #passwordInput::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+        @keyframes drift-small {
+            0%, 100% { transform: translateY(0) rotate(-9deg); }
+            50% { transform: translateY(14px) rotate(-6deg); }
         }
 
-        #submitPassword {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .portal,
+            .story-grid,
+            .gallery { grid-template-columns: 1fr; }
+            .hero { min-height: auto; padding-top: 28px; }
+            .hero-visual { min-height: 580px; }
+            .poster-large { inset: 40px 20px 72px 44px; }
+            .nav-links { display: none; }
         }
 
-        #submitPassword:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+        @media (max-width: 720px) {
+            :root { --container: min(100vw - 28px, 1180px); }
+            .site-header .shell { min-height: 70px; }
+            .hero-copy h1 { font-size: clamp(2.8rem, 18vw, 4.4rem); }
+            .hero-visual { min-height: 460px; }
+            .poster-large { inset: 56px 12px 84px 20px; border-radius: 26px; }
+            .poster-small { width: 176px; border-radius: 22px; }
+            .floating-copy { width: calc(100% - 38px); padding: 20px; border-radius: 22px; }
+            .signal-strip { grid-template-columns: 1fr; }
+            .portal-main,
+            .story-visual,
+            .gallery-card.tall { min-height: 400px; }
+            .portal-main,
+            .portal-side,
+            .cta-panel,
+            #passwordForm { padding: 24px; }
+            .gallery-card { min-height: 220px; }
         }
-
-        #errorMessage {
-            color: #ff6b6b;
-            margin-top: 10px;
-            display: none;
-        }
-
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            color: #fff;
-        }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        h1, h2 {
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        section {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-        }
-
-        button {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 15px;
-            margin: 5px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .copied {
-            background-color: rgba(76, 175, 80, 0.3);
-        }
-
-        a {
-            color: #fff;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            border-bottom-color: #fff;
-        }
-
-        code {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-        }
+    </style>
     </style>
 </head>
 <body>
-    <div id="passwordOverlay" style="display: none;">
+    <div id="passwordOverlay">
         <div id="passwordForm">
-            <h2 style="color: white; margin-bottom: 20px;">请输入访问密码</h2>
-            <input type="password" id="passwordInput" placeholder="请输入密码">
-            <br>
-            <button id="submitPassword">确认</button>
-            <div id="errorMessage">密码错误，请重试</div>
+            <h2>Private Access</h2>
+            <p>输入访问密码，进入 Icloned TV 的私有观影入口。页面建议在桌面端获得最佳沉浸效果。</p>
+            <input type="password" id="passwordInput" placeholder="请输入访问密码">
+            <button id="submitPassword" class="button button-primary" type="button">进入站点</button>
+            <div id="errorMessage">密码错误，请重新输入。</div>
         </div>
     </div>
 
     <div id="mainContent" style="display: none;">
-        <h1>GitHub 简介与资源！</h1>
-        <section>
-            <h2>什么是 GitHub？</h2>
-            <p>GitHub 是一个使用 Git 进行版本控制的协作平台。GitHub 是共享和贡献开源软件的热门场所。</p>
-        </section>
-       
-        <section>
-            <h2>什么是仓库？</h2>
-            <p>仓库是包含文件和文件夹的项目。存储库跟踪文件和文件夹的版本。有关更多信息，请参阅 <a href="https://docs.github.com/cn/repositories">GitHub Docs 中的" 关于仓库 "</a>。</p>
-        </section>
-      <section>
-          <h2>自用订阅链接</h2>
-            <p>订阅后，在使用每个节点前，先测试真连接延迟，使用非-1的节点。再使用<a href="http://www.ping0.cc" target="_blank">http://www.ping0.cc</a> 检测IP的风控值，越低越安全！</p>
-              <p>
-                               
-                <button data-text="SubsCheck订阅" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">SubsCheck订阅</button>
-                <button data-text="SubsCheck-Clash订阅" onclick="copyToClipboard(this, ' https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')">SubsCheck-Clash订阅</button>
-          
-                  
-            </p>
-        </section>
-        <section>
-            <h2>什么是分支？</h2>
-            <p>分支是存储库的并行版本。默认情况下，您的仓库有一个名为 main 的分支，它被视为最终分支。</p>
-            <p>通过创建其他分支，您可以复制存储库的主分支并安全地进行任何更改，而不会中断主项目。</p>
-            <p>许多人使用分支来处理特定功能，而不会影响项目的任何其他部分。有关详细信息，请参阅 <a href="https://docs.github.com/cn/branches">" 关于分支 "</a>。</p>
-        </section>
+        <header class="site-header">
+            <div class="shell">
+                <a href="#top" class="brand" aria-label="Icloned TV 首页">
+                    <div class="brand-mark">IT</div>
+                    <div class="brand-copy">
+                        <strong>Icloned TV</strong>
+                        <span>Private stream portal</span>
+                    </div>
+                </a>
+                <nav class="nav-links" aria-label="站点导航">
+                    <a href="#portal">订阅入口</a>
+                    <a href="#guide">体验建议</a>
+                    <a href="#gallery">画面氛围</a>
+                </nav>
+                <a href="#portal" class="nav-action">快速进入</a>
+            </div>
+        </header>
 
-        <section>
-            <h2>什么是配置文件 README？</h2>
-            <p>配置文件 README 本质上是 GitHub 个人资料上的"关于我"部分，您可以在其中与 GitHub.com 上的社区分享有关您自己的信息。</p>
-            <p>GitHub 在个人资料页面顶部显示您的个人资料 README。有关详细信息，请参阅 <a href="https://docs.github.com/cn/profile-readmes">" 管理配置文件 README"</a>。</p>
-        </section>
+        <main id="top">
+            <section class="hero">
+                <div class="shell hero-grid">
+                    <div class="hero-copy reveal">
+                        <div class="eyebrow">Private access / curated nodes</div>
+                        <h1>把观影入口，做成一张夜色海报。</h1>
+                        <p>更沉浸的页面氛围、更清晰的订阅入口、更现代的观感节奏。这个页面仍然是一个纯静态站点，但不再像一份说明文档，而更像一个真正的入口首页。</p>
+                        <div class="hero-actions">
+                            <a href="#portal" class="button button-primary">复制订阅</a>
+                            <a href="#gallery" class="button button-secondary">浏览氛围图</a>
+                        </div>
+                        <div class="hero-notes">
+                            <span>内部访问优先</span>
+                            <span>纯静态部署</span>
+                            <span>移动端自适应</span>
+                        </div>
+                    </div>
 
-        <section>
-            <h2>Activity: Your first branch</h2>
-            <p>打开一个新的浏览器选项卡，并导航到您新创建的存储库（本练习的副本）。然后，在阅读此选项卡中的说明时，执行第二个选项卡中的步骤。</p>
-            <ol>
-                <li>导航到存储库标题菜单中的 <code>&lt;&gt; 代码</code> 选项卡。</li>
-                <li>单击 main 分支下拉列表。</li>
-                <li>在文本框中输入 <code>my-first-branch</code>。</li>
-                <li>单击 <code>Create branch： my-first-branch from main</code> 以创建您的分支。</li>
-            </ol>
-            <p>现在你的分支已经被推送到 GitHub，Mona 应该已经在忙着检查你的工作了。给她一点时间，并在评论中保持关注。您将看到她回复进度信息和下一课。</p>
-        </br></br></br>
+                    <div class="hero-visual reveal" style="--delay: 120ms;">
+                        <div class="visual-stack">
+                            <div class="poster-large"></div>
+                            <div class="poster-small"></div>
+                            <div class="floating-copy">
+                                <strong>Tonight feels cinematic.</strong>
+                                <p>深色基底、发光按钮、全屏图片和缓慢漂浮的视觉层，让首屏先建立情绪，再给出功能。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-   
+
+            <section class="section">
+                <div class="shell">
+                    <div class="section-head reveal">
+                        <span>Signal</span>
+                        <h2>你真正需要的不是更多信息，而是更短的路径。</h2>
+                        <p>这个页面只保留最必要的几件事：入口、质量判断、线路选择和视觉氛围。信息少一点，使用反而更直接。</p>
+                    </div>
+                    <div class="signal-strip">
+                        <article class="signal-item reveal">
+                            <strong>优先看真连接延迟</strong>
+                            <p>使用节点前先判断线路真实性和响应速度，避免把时间浪费在不可用或虚标的入口上。</p>
+                        </article>
+                        <article class="signal-item reveal" style="--delay: 90ms;">
+                            <strong>避开高风控出口</strong>
+                            <p>用第三方工具快速检查 IP 风控值，优先选择更稳定、更低风险的线路。</p>
+                        </article>
+                        <article class="signal-item reveal" style="--delay: 180ms;">
+                            <strong>只保留常用动作</strong>
+                            <p>复制链接、快速跳转、视觉确认。页面只服务于进入内容，不制造额外操作成本。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="portal">
+                <div class="shell">
+                    <div class="portal">
+                        <div class="portal-main reveal">
+                            <div class="portal-chip">Portal</div>
+                            <h3>一键复制订阅，直接进入你的主线路。</h3>
+                            <p>保留原有的复制逻辑，但以更清晰的层次呈现。页面重点不是解释，而是让你用最快速度拿到需要的入口地址。</p>
+                        </div>
+                        <aside class="portal-side reveal" style="--delay: 120ms;">
+                            <h3>订阅入口</h3>
+                            <p>复制后建议先做延迟测试，再检查出口 IP 风控情况。非 -1 节点通常更值得优先尝试。</p>
+                            <div class="copy-group">
+                                <button type="button" class="button copy-button" data-text="SubsCheck 订阅" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/base64.txt')">
+                                    <span>SubsCheck 订阅</span>
+                                    <small>适合快速导入与基础检查</small>
+                                </button>
+                                <button type="button" class="button copy-button" data-text="SubsCheck Clash 订阅" onclick="copyToClipboard(this, 'https://gist.githubusercontent.com/icloned/6ebe7908fbf78ba8b4519fb09538631d/raw/mihomo.yaml')">
+                                    <span>SubsCheck Clash 订阅</span>
+                                    <small>适合 Mihomo / Clash 系客户端</small>
+                                </button>
+                            </div>
+                            <p class="portal-note">风控检测：<a href="http://www.ping0.cc" target="_blank" rel="noreferrer">ping0.cc</a></p>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="guide">
+                <div class="shell">
+                    <div class="story-grid">
+                        <div class="story-copy">
+                            <div class="section-head reveal">
+                                <span>Guide</span>
+                                <h2>像调光一样调整线路，而不是盲点进去。</h2>
+                                <p>观影体验的差别，往往不在播放器，而在入口质量。先筛线路，再看内容，实际体验会稳定很多。</p>
+                            </div>
+                            <div class="story-row reveal">
+                                <strong>01. 先测速，不赌首个节点</strong>
+                                <p>导入后先看真实延迟和连通性，再决定主用节点。稳定性比一时的峰值速度更重要。</p>
+                            </div>
+                            <div class="story-row reveal" style="--delay: 90ms;">
+                                <strong>02. 看风控，再决定是否长期保留</strong>
+                                <p>出口 IP 风控越低，越适合长期使用。临时可用和长期稳定，是两回事。</p>
+                            </div>
+                            <div class="story-row reveal" style="--delay: 180ms;">
+                                <strong>03. 页面只是入口，不是终点</strong>
+                                <p>这个站点的职责是把路径缩短，把视觉体验做好，让你更快进入内容本身。</p>
+                            </div>
+                        </div>
+                        <div class="story-visual reveal" style="--delay: 120ms;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="gallery">
+                <div class="shell">
+                    <div class="section-head reveal">
+                        <span>Atmosphere</span>
+                        <h2>让入口页也有一点电影感。</h2>
+                        <p>这几张图片不承担说明职责，只负责建立氛围。页面不再是说明书，而像一个被设计过的入口界面。</p>
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-column">
+                            <article class="gallery-card tall reveal">
+                                <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?auto=format&fit=crop&w=1200&q=80" alt="夜晚的城市影院氛围">
+                                <div class="gallery-copy">
+                                    <strong>City light / Late screen</strong>
+                                    <p>城市夜色与屏幕冷光的组合，决定了整页的色温和情绪。</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="gallery-column">
+                            <article class="gallery-card reveal" style="--delay: 90ms;">
+                                <img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=900&q=80" alt="投影与沙发场景">
+                                <div class="gallery-copy">
+                                    <strong>Home projection</strong>
+                                    <p>适合放松的低照度空间，比高亮度界面更贴近夜间使用场景。</p>
+                                </div>
+                            </article>
+                            <article class="gallery-card reveal" style="--delay: 180ms;">
+                                <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=900&q=80" alt="现代客厅中的大屏幕">
+                                <div class="gallery-copy">
+                                    <strong>Large screen mode</strong>
+                                    <p>页面气质跟播放环境统一，入口自然就不会显得突兀。</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <div class="shell">
+                    <div class="cta-panel reveal">
+                        <h2>想要的只是一个更快、更稳、更像样的入口。</h2>
+                        <p>现在这个页面已经从普通说明页，变成了带氛围、带层次、能直接使用的私有首页。如果你愿意，我下一步还能再加轻量状态区、时间问候或更动态的首屏动画。</p>
+                        <div class="cta-actions">
+                            <a href="#portal" class="button button-primary">现在复制订阅</a>
+                            <a href="#top" class="button button-secondary">回到顶部</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-
     <script>
-        // 反调试保护
         (function() {
-            function checkDevTools() {
-                const threshold = 160;
-                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-                
-                if (widthThreshold || heightThreshold) {
-                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">请关闭开发者工具后输入</h1>';
-                }
-            }
-
-            setInterval(checkDevTools, 1000);
-
-            document.addEventListener('keydown', function(e) {
-                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
-                    e.preventDefault();
-                    document.body.innerHTML = '<h1 style="color: white; text-align: center; margin-top: 50px;">请关闭开发者工具后重试</h1>';
-                }
-            });
-        })();
-
-        
-        (function() {
-            
             function encrypt(str) {
-                return btoa(str.split('').reverse().join(''));
+                return btoa(str.split("").reverse().join(""));
             }
 
-            
-            const encryptedPassword = 'MjI4NQ=='; 
+            function revealVisible() {
+                var elements = document.querySelectorAll(".reveal");
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.16 });
+
+                elements.forEach(function(element) {
+                    observer.observe(element);
+                });
+            }
 
             function checkPassword() {
-                const inputPassword = document.getElementById('passwordInput').value;
-                const encryptedInput = encrypt(inputPassword);
-                
-                if (encryptedInput === encryptedPassword) {
-                    document.getElementById('passwordOverlay').style.display = 'none';
-                    document.getElementById('mainContent').style.display = 'block';
-                    document.body.style.overflow = 'auto';
+                var input = document.getElementById("passwordInput");
+                var message = document.getElementById("errorMessage");
+                var overlay = document.getElementById("passwordOverlay");
+                var mainContent = document.getElementById("mainContent");
+                var encryptedPassword = "MjI4NQ==";
+
+                if (encrypt(input.value) === encryptedPassword) {
+                    overlay.style.display = "none";
+                    mainContent.style.display = "block";
+                    document.body.style.overflow = "auto";
+                    revealVisible();
                 } else {
-                    document.getElementById('errorMessage').style.display = 'block';
-                    document.getElementById('passwordInput').value = '';
+                    message.style.display = "block";
+                    input.value = "";
                 }
             }
 
-            document.addEventListener('DOMContentLoaded', function() {
-                const passwordOverlay = document.getElementById('passwordOverlay');
-                const passwordInput = document.getElementById('passwordInput');
-                passwordOverlay.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
+            document.addEventListener("DOMContentLoaded", function() {
+                var overlay = document.getElementById("passwordOverlay");
+                var input = document.getElementById("passwordInput");
+                var submit = document.getElementById("submitPassword");
 
-                // 自动聚焦到密码输入框
-                passwordInput.focus();
+                overlay.style.display = "flex";
+                document.body.style.overflow = "hidden";
+                input.focus();
 
-                document.getElementById('submitPassword').addEventListener('click', checkPassword);
-                passwordInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
+                submit.addEventListener("click", checkPassword);
+                input.addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
                         checkPassword();
                     }
                 });
@@ -306,15 +822,22 @@
 
         function copyToClipboard(button, text) {
             navigator.clipboard.writeText(text).then(function() {
-                const originalText = button.getAttribute('data-text');
-                button.textContent = '已复制!';
-                button.classList.add('copied');
-                setTimeout(function() {
-                    button.textContent = originalText;
-                    button.classList.remove('copied');
-                }, 1500); // Revert after 1.5 seconds
-            }, function(err) {
-                console.error('Could not copy text: ', err);
+                var label = button.querySelector("span");
+                var description = button.querySelector("small");
+                var originalText = button.getAttribute("data-text");
+                var originalDescription = description.textContent;
+
+                label.textContent = "已复制";
+                description.textContent = "链接已经写入剪贴板";
+                button.classList.add("copied");
+
+                window.setTimeout(function() {
+                    label.textContent = originalText;
+                    description.textContent = originalDescription;
+                    button.classList.remove("copied");
+                }, 1800);
+            }).catch(function(error) {
+                console.error("Copy failed:", error);
             });
         }
     </script>
